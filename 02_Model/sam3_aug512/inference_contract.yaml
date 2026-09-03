@@ -1,0 +1,34 @@
+schema_version: "1.0"
+variant: daechung_sam3_aug512_query_balanced_v1
+checkpoint:
+  filename: checkpoint_final.pt
+  size_bytes: 10081318934
+  sha256: a2749dba62207575afac9ed42f923d7cdfd7e2d2f0ffb2210a103e91657d985d
+  model_key_count: 1134
+sam3:
+  compatible_commit: 46957e47805eaa273f4aa7bbbd25a88bca9108ce
+classes:
+  CRC: crack
+  DLM: delamination
+  SPL: spalling
+validated_tile_protocol:
+  dataset_tile_size: 512
+  stride: 512
+  processor_resolution: 1008
+  processor_minimum_confidence: 0.05
+  candidate_score_operator: ">="
+  candidate_score_threshold: 0.5
+  mask_probability_operator: ">"
+  mask_probability_threshold: 0.5
+  candidate_merge: binary_union
+  class_overlap_preserved: true
+  top_k: null
+  nms: false
+deployment_extension:
+  source_resize: false
+  edge_policy: pad_right_bottom_then_crop
+  padding_mode: reflect
+  source_size_wh: [5280, 3956]
+  padded_size_wh: [5632, 4096]
+  output_size_wh: [5280, 3956]
+  official_aug512_diagnostic_equivalent: false
