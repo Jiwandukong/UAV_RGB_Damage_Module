@@ -10,9 +10,13 @@ Expected local file: `daecheong_dam_epsg5186_zup.obj`
 
 OBJ does not carry an embedded CRS. The contract above is project metadata and must remain with the file. The coordinate-less/Y-up GLB is intentionally unsupported.
 
-After obtaining the verified OBJ, place it with:
+Download the verified OBJ from the
+[`daecheong-dam-geometry-v1` release](https://github.com/Jiwandukong/UAV_RGB_Damage_Module/releases/tag/daecheong-dam-geometry-v1):
 
 ```bash
-cp "/path/to/dam - Cloud.obj" 01_RawData/geometry/daecheong_dam_epsg5186_zup.obj
-sha256sum 01_RawData/geometry/daecheong_dam_epsg5186_zup.obj
+curl --fail --location \
+  --output 01_RawData/geometry/daecheong_dam_epsg5186_zup.obj \
+  https://github.com/Jiwandukong/UAV_RGB_Damage_Module/releases/download/daecheong-dam-geometry-v1/daecheong_dam_epsg5186_zup.obj
+
+python 03_Processing/scripts/verify_assets.py
 ```

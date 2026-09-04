@@ -78,7 +78,7 @@ Release 다운로드 또는 복원이 작동하지 않으면 저장소 관리자
 
 ## 3D 모델 준비
 
-3D 표출 좌표를 생성하려면 다음 OBJ 파일이 필요합니다. OBJ는 Git 저장소에 포함되지 않으므로 별도로 준비합니다.
+3D 표출 좌표를 생성하려면 다음 OBJ 파일이 필요합니다. 일반 Git 파일에는 포함하지 않고 [3D 모델 Release](https://github.com/Jiwandukong/UAV_RGB_Damage_Module/releases/tag/daecheong-dam-geometry-v1)에서 제공합니다.
 
 ```text
 원본 파일명: dam - Cloud.obj
@@ -89,9 +89,14 @@ SHA-256: a7566c8d8f70de91db18c70ae5f404b0f7885e679a1027fd3e1936afd2d1e470
 ```
 
 ```bash
-cp "/path/to/dam - Cloud.obj" 01_RawData/geometry/daecheong_dam_epsg5186_zup.obj
+curl --fail --location \
+  --output 01_RawData/geometry/daecheong_dam_epsg5186_zup.obj \
+  https://github.com/Jiwandukong/UAV_RGB_Damage_Module/releases/download/daecheong-dam-geometry-v1/daecheong_dam_epsg5186_zup.obj
+
 python 03_Processing/scripts/verify_assets.py
 ```
+
+브라우저에서 직접 받은 경우에도 파일명을 `daecheong_dam_epsg5186_zup.obj`로 유지해 같은 위치에 두십시오.
 
 ## 실행
 
