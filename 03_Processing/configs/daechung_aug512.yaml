@@ -30,7 +30,7 @@ inference:
       prompt: spalling
 
 visualization:
-  alpha: 0.45
+  alpha: 0.80
   colors_rgb:
     CRC: [255, 64, 64]
     DLM: [255, 210, 0]

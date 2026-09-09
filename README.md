@@ -199,6 +199,8 @@ python 03_Processing/scripts/run_pipeline.py --help
 
 마스크, 미리보기, 오버레이는 원본 사진과 같은 가로·세로 pixel 크기로 저장됩니다. `multilabel_rgb.png`의 세 채널은 독립적이므로 한 pixel에 여러 손상이 겹칠 수 있습니다.
 
+오버레이의 기본 색 불투명도는 80%입니다(`visualization.alpha: 0.80`). 배경은 원본 그대로 두고 손상 영역에만 색을 입힙니다. 겹친 손상은 해당 색의 평균으로 표시하므로 **초록은 박리+박락, 주황은 균열+박리, 보라는 균열+박락**을 뜻합니다. 세 종류가 모두 겹치면 갈색 계열이며, 원본 사진과 섞이면서 색조가 더 달라질 수 있습니다. 이는 추가 손상 종류나 심각도 표시가 아닙니다. 표시 농도를 바꿔도 손상 마스크·좌표·정량값·13개 컬럼은 바뀌지 않습니다.
+
 ## 손상 라벨
 
 | 코드 | 영문 | 한글 | 제공되는 정량값 | 기본 표시 색상 |
@@ -295,6 +297,7 @@ GitHub에는 샘플 원본 사진 7장으로 생성한 표 예시가 포함되�
 
 - [CSV 예시](04_Output/examples/left03_aug512_full_20260903/damage_results.csv)
 - [Excel 예시](04_Output/examples/left03_aug512_full_20260903/damage_results.xlsx)
+- [오버레이 예시 7장](04_Output/examples/left03_aug512_full_20260903/overlays)
 - [예시 설명](04_Output/examples/left03_aug512_full_20260903/README.md)
 
 ## 라이선스

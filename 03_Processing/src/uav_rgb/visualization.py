@@ -12,7 +12,7 @@ def mask_to_color(mask: np.ndarray, palette: dict[int, tuple[int, int, int]]) ->
     return color
 
 
-def make_overlay(image_rgb: np.ndarray, color_mask: np.ndarray, alpha: float = 0.45) -> np.ndarray:
+def make_overlay(image_rgb: np.ndarray, color_mask: np.ndarray, alpha: float = 0.80) -> np.ndarray:
     return np.clip(image_rgb * (1 - alpha) + color_mask * alpha, 0, 255).astype(np.uint8)
 
 
@@ -37,9 +37,13 @@ def make_multilabel_overlay(
     image_rgb: np.ndarray,
     class_masks: ClassMasks,
     palette: dict[int, tuple[int, int, int]],
-    alpha: float = 0.45,
+    alpha: float = 0.80,
 ) -> np.ndarray:
-    """Blend mask colors only on damage pixels and leave background intact."""
+    """Blend damage colors at 80% opacity by default; keep background intact.
+
+    Overlapping labels retain their averaged display color. This affects
+    visualization only, never the independent masks or quantitative outputs.
+    """
 
     height, width = validate_class_masks(class_masks)
     if image_rgb.shape != (height, width, 3):
