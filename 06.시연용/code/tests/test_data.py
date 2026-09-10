@@ -161,6 +161,36 @@ def test_no_overwrite_and_negative_tiles(tmp_path):
         prepare_dataset(root, empty_output, tile_size=4)
 
 
+def test_prepare_needs_only_source_photos_and_labels(tmp_path):
+    root = tmp_path / "source"
+    source_image, source_label = source_release(
+        root, size=(5, 5), shapes=[shape("CRC", [[0, 1], [4, 1]])]
+    )
+    (root / "README.md").unlink()
+    output = tmp_path / "prepared"
+
+    manifest = prepare_dataset(root, output, tile_size=4)
+
+    release_files = manifest["source_release"]["files"]
+    assert len(release_files) == manifest["summary"]["source_release_files"] == 2
+    assert {entry["source_relative_path"] for entry in release_files} == {
+        source_image.relative_to(root).as_posix(),
+        source_label.relative_to(root).as_posix(),
+    }
+    for entry in release_files:
+        assert sha256_file(output / entry["path"]) == entry["sha256"]
+    assert manifest["summary"]["tiles"] == 4
+    assert manifest["summary"]["positive_tiles"] == 2
+    for tile in manifest["tiles"]:
+        assert read_mask(output, tile["image_path"]).shape == (4, 4, 3)
+        assert read_mask(output, tile["overlay_path"]).shape == (4, 4, 3)
+        assert read_mask(output, tile["valid_mask_path"]).shape == (4, 4)
+        for mask_path in tile["mask_paths"].values():
+            assert read_mask(output, mask_path).shape == (4, 4)
+        for instance in tile["instances"]:
+            assert read_mask(output, instance["instance_mask_path"]).shape == (4, 4)
+
+
 def test_invalid_source_does_not_publish_partial_dataset(tmp_path):
     root = tmp_path / "source"
     source_release(root, shapes=[shape("UNSUPPORTED", [[0, 0], [1, 1], [2, 0]])])
