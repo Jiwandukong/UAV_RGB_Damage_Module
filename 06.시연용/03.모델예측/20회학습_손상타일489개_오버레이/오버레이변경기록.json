@@ -1,0 +1,42 @@
+{
+  "updated_utc": "2026-09-10T14:50:35.308257+00:00",
+  "display_only": true,
+  "model_inference_rerun": false,
+  "dataset_manifest_sha256": "4bcbf39611f46e1bc8072dd82deb4c16079fb2303f0fa88d2523021b7a1774d6",
+  "checkpoint_sha256": "eb6489ba6e5aa9b307aef1f1d2b86037ff91d40e22f0deb98e8c704d286079d5",
+  "previous_overlay_style": {
+    "class_colors_rgb": {
+      "CRC": [
+        0,
+        255,
+        0
+      ],
+      "DLM": [
+        0,
+        0,
+        255
+      ],
+      "SPL": [
+        255,
+        255,
+        0
+      ]
+    },
+    "paint_order": [
+      "DLM",
+      "SPL",
+      "CRC"
+    ],
+    "alpha": 1.0,
+    "model_folder": "모델예측오버레이",
+    "ground_truth_folder": "라벨오버레이",
+    "ground_truth_source": "human_reviewed_dataset_labels",
+    "overlap_rule": "last color wins only in overlay; binary masks stay independent"
+  },
+  "alpha": 0.5,
+  "tiles": 489,
+  "overlay_images_updated": 978,
+  "originals_and_masks_unchanged": true,
+  "metrics_unchanged": true,
+  "historical_training_dataset_unchanged": true
+}

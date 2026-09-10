@@ -1,0 +1,147 @@
+{
+  "check_scope": "SAME_TRAINING_IMAGES_REPRODUCTION_CHECK",
+  "generalization_evaluation": false,
+  "official_accuracy_claim": false,
+  "selection": "positive",
+  "smoke_check": false,
+  "evaluated_tiles": 489,
+  "threshold": 0.5,
+  "checkpoint_sha256": "eb6489ba6e5aa9b307aef1f1d2b86037ff91d40e22f0deb98e8c704d286079d5",
+  "dataset_manifest_sha256": "4bcbf39611f46e1bc8072dd82deb4c16079fb2303f0fa88d2523021b7a1774d6",
+  "pixel_matching": "exact same-position valid pixels; no tolerance or morphology",
+  "zero_denominator": "null (undefined); macro mean excludes undefined classes",
+  "class_overlap": "each class evaluated independently, including overlapping pixels",
+  "all_queried_classes": {
+    "by_class": {
+      "CRC": {
+        "tp": 61900,
+        "fp": 502927,
+        "fn": 1902,
+        "tn": 123593271,
+        "tile_class_pairs": 489,
+        "valid_pixels": 124160000,
+        "reference_positive_pixels": 63802,
+        "predicted_positive_pixels": 564827,
+        "precision": 0.10959107833017898,
+        "recall": 0.9701890222877025,
+        "iou": 0.1092232795568958,
+        "f1": 0.1969365078607573
+      },
+      "DLM": {
+        "tp": 2072858,
+        "fp": 3035089,
+        "fn": 85564,
+        "tn": 118966489,
+        "tile_class_pairs": 489,
+        "valid_pixels": 124160000,
+        "reference_positive_pixels": 2158422,
+        "predicted_positive_pixels": 5107947,
+        "precision": 0.405810397014691,
+        "recall": 0.9603580764095251,
+        "iou": 0.3991245999093869,
+        "f1": 0.5705347471343666
+      },
+      "SPL": {
+        "tp": 10454899,
+        "fp": 3325511,
+        "fn": 577725,
+        "tn": 109801865,
+        "tile_class_pairs": 489,
+        "valid_pixels": 124160000,
+        "reference_positive_pixels": 11032624,
+        "predicted_positive_pixels": 13780410,
+        "precision": 0.75867837023717,
+        "recall": 0.9476348509656451,
+        "iou": 0.728151601861941,
+        "f1": 0.842694125998457
+      }
+    },
+    "micro": {
+      "tp": 12589657,
+      "fp": 6863527,
+      "fn": 665191,
+      "tn": 352361625,
+      "tile_class_pairs": 1467,
+      "valid_pixels": 372480000,
+      "reference_positive_pixels": 13254848,
+      "predicted_positive_pixels": 19453184,
+      "precision": 0.6471771921758412,
+      "recall": 0.9498152675911485,
+      "iou": 0.6257790204228721,
+      "f1": 0.7698205138114088
+    },
+    "macro": {
+      "iou": 0.41216649377607456,
+      "iou_defined_classes": 3,
+      "f1": 0.536721793664527,
+      "f1_defined_classes": 3
+    }
+  },
+  "positive_ground_truth_class_pairs_only": {
+    "by_class": {
+      "CRC": {
+        "tp": 61900,
+        "fp": 259364,
+        "fn": 1902,
+        "tn": 65298850,
+        "tile_class_pairs": 262,
+        "valid_pixels": 65622016,
+        "reference_positive_pixels": 63802,
+        "predicted_positive_pixels": 321264,
+        "precision": 0.19267642810896957,
+        "recall": 0.9701890222877025,
+        "iou": 0.191542427111763,
+        "f1": 0.3215033267024354
+      },
+      "DLM": {
+        "tp": 2072858,
+        "fp": 61524,
+        "fn": 85564,
+        "tn": 26996822,
+        "tile_class_pairs": 112,
+        "valid_pixels": 29216768,
+        "reference_positive_pixels": 2158422,
+        "predicted_positive_pixels": 2134382,
+        "precision": 0.9711747943901325,
+        "recall": 0.9603580764095251,
+        "iou": 0.9337425324760151,
+        "f1": 0.9657361482145469
+      },
+      "SPL": {
+        "tp": 10454899,
+        "fp": 344356,
+        "fn": 577725,
+        "tn": 59430572,
+        "tile_class_pairs": 276,
+        "valid_pixels": 70807552,
+        "reference_positive_pixels": 11032624,
+        "predicted_positive_pixels": 10799255,
+        "precision": 0.9681129855716899,
+        "recall": 0.9476348509656451,
+        "iou": 0.9189520417544902,
+        "f1": 0.9577644691050184
+      }
+    },
+    "micro": {
+      "tp": 12589657,
+      "fp": 665244,
+      "fn": 665191,
+      "tn": 151726244,
+      "tile_class_pairs": 650,
+      "valid_pixels": 165646336,
+      "reference_positive_pixels": 13254848,
+      "predicted_positive_pixels": 13254901,
+      "precision": 0.9498114697348551,
+      "recall": 0.9498152675911485,
+      "iou": 0.9044234046729002,
+      "f1": 0.9498133686592053
+    },
+    "macro": {
+      "iou": 0.6814123337807562,
+      "iou_defined_classes": 3,
+      "f1": 0.7483346480073335,
+      "f1_defined_classes": 3
+    }
+  },
+  "positive_subset_warning": "excludes absent-class queries; use all_queried_classes to include their false positives"
+}

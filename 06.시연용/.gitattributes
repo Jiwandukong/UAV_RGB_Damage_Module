@@ -1,0 +1,6 @@
+# Preserve released source and result bytes, including CRLF/BOM and recorded hashes.
+01.시연데이터/원본자료/** -text -diff
+02.시연모델/** -text
+03.모델예측/** -text
+04.시연산출물/** -text
+*.csv -text

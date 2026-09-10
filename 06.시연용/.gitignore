@@ -1,0 +1,24 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.pt
+*.log
+# Keep original reviewed sources; regenerate large training tiles/masks locally.
+01.시연데이터/*
+!01.시연데이터/README.md
+!01.시연데이터/원본자료/
+# Publish final training records, never checkpoint weights or pilot runs.
+02.시연모델/*
+!02.시연모델/README.md
+!02.시연모델/손상타일489개_512입력_20회학습/
+02.시연모델/손상타일489개_512입력_20회학습/*
+!02.시연모델/손상타일489개_512입력_20회학습/학습기록.json
+!02.시연모델/손상타일489개_512입력_20회학습/학습진행.jsonl
+# Publish the complete final prediction comparison, not pilot runs.
+03.모델예측/*
+!03.모델예측/README.md
+!03.모델예측/20회학습_손상타일489개_오버레이/
+# 04.시연산출물 is the complete public platform handoff, including linked images.
+04.시연산출물*/
+!04.시연산출물/
+.publication-*/
