@@ -1,22 +1,8 @@
-# Raw 데이터와 처리 데이터
+# 원본 데이터
 
-| 자료 | 이 폴더 기준 위치 |
-|---|---|
-| 원본 사진 20장 | [원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/images/](원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/images/) |
-| 손상 라벨 JSON 20개 | [원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/labels/](원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/labels/) |
+| 자료 | 이 폴더 기준 위치 | 의미 |
+|---|---|---|
+| 원본 사진 20장 | [원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/images/](원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/images/) | 자르기 전 JPG |
+| 손상 라벨 20개 | [원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/labels/](원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/labels/) | 같은 파일명의 JPG에 대응하는 정답 JSON |
 
-같은 파일명의 JPG와 JSON이 한 쌍입니다. 원본자료에는 실행에 필요한 사진과 라벨만 포함합니다.
-
-처리 데이터를 다시 만들려면 설치 후 `06.시연용/`에서 실행합니다.
-
-```bash
-python code/시연도구.py prepare \
-  --source 01.시연데이터/원본자료/Daechung_Demo20_GT_release_v1 \
-  --output 01.시연데이터/새_512데이터
-```
-
-`새_512데이터/`에 `원본타일/`, `학습마스크/`, `라벨오버레이/`, `dataset.json`이 생성됩니다. 리사이즈 없이 512×512로 자르며, 이후 명령의 `--data`에 이 폴더를 지정합니다. 이 중간 데이터는 Git에 포함하지 않습니다.
-
-이미 처리된 **표출용 타일**은 [04.시연산출물/512원본타일/](../04.시연산출물/512원본타일/), **시연용 오버레이**는 [04.시연산출물/512라벨오버레이/](../04.시연산출물/512라벨오버레이/)에 있습니다.
-
-전체 실행 순서는 [시연 안내](../README.md#원본부터-csv와-오버레이를-다시-만들기)를 참고하십시오. 이전 학습 모델의 전체 타일 재예측에는 학습 당시의 `dataset.json`과 타일 묶음이 필요합니다. 새로 만든 데이터로 대체하지 말고 관리자에게 요청하십시오.
+원본자료에는 사진과 라벨만 포함합니다. **512×512 이미지·라벨 오버레이·모델 예측 오버레이·CSV**는 [시연산출물](../04.시연산출물/README.md)에 있습니다.

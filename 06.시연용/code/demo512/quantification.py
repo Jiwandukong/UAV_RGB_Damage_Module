@@ -173,10 +173,21 @@ def _save_tiles(root: Path, destination: Path, tiles: list[dict]) -> list[dict]:
     return mappings
 
 
-def _readme(summary: dict) -> str:
+def _readme(summary: dict, *, include_model_overlays: bool = False) -> str:
+    model_overlay_row = (
+        "| 모델 예측이 겹쳐진 512×512 이미지 | "
+        "[512모델예측오버레이/](512모델예측오버레이/), 불투명도 50% |\n"
+        if include_model_overlays else ""
+    )
+    model_overlay_note = (
+        "라벨 오버레이와 모델 예측 오버레이는 별도 폴더이며, 같은 파일명끼리 대응합니다. "
+        "**CSV·정량값·`tile_overlay_paths_json`은 기존 라벨 기준을 유지합니다.** "
+        "모델 예측 오버레이를 사용할 때는 같은 파일명을 `512모델예측오버레이/`에서 찾으면 됩니다.\n"
+        if include_model_overlays else ""
+    )
     return f"""# 대청댐 시연용 산출물
 
-플랫폼 표출용으로, **검수된 라벨에서 만든 결과이며 모델 예측 결과가 아닙니다.**
+**CSV와 정량값은 검수된 라벨에서 만든 결과이며 모델 예측 결과가 아닙니다.**
 원본 {summary['images']}장 · 손상 {summary['rows']}건 · 512×512 타일 {summary['tiles']}장입니다.
 
 ## 결과와 이미지 위치
@@ -188,15 +199,10 @@ def _readme(summary: dict) -> str:
 | 자르기 전 원본 사진 | [원본사진/](원본사진/) |
 | 처리된 512×512 원본 타일 | [512원본타일/](512원본타일/) |
 | 라벨이 겹쳐진 512×512 이미지 | [512라벨오버레이/](512라벨오버레이/), 불투명도 50% |
-
-준비된 결과를 표시할 때는 모델 실행이 필요 없습니다. 다시 생성하려면 [실행 안내](../code/실행안내.md)를 참고하세요.
-
-## 화면에 연결하는 방법
-
-1. CSV의 한 행을 손상 하나로 읽습니다. 원본 타일과 오버레이는 같은 파일명끼리 대응합니다.
-2. **이미지 경로의 기준은 이 CSV가 있는 폴더입니다.** 이 폴더를 이미지까지 함께 전달하세요.
-3. `world_center_*` 좌표에 3D 표시점을 놓고, 클릭하면 두 타일 경로 배열의 첫 이미지를 표시합니다. 나머지 항목은 같은 손상이 이어지는 타일입니다.
-4. 좌표가 비어 있으면 3D 표시점을 만들지 않습니다. 이미지와 손상 정보는 그대로 확인할 수 있습니다.
+{model_overlay_row}
+{model_overlay_note}
+**이미지 경로의 기준은 이 CSV가 있는 폴더입니다.** 원본 타일과 오버레이는 같은 파일명끼리 대응합니다.
+CSV 한 행은 손상 하나이며, 타일 경로 배열의 첫 항목은 대표 표시점에 대응하는 타일입니다.
 
 ## 표출용 컬럼
 
@@ -212,7 +218,7 @@ def _readme(summary: dict) -> str:
 | `tile_original_paths_json` | 해당 손상의 512×512 원본 타일 경로 배열(JSON) |
 | `tile_overlay_paths_json` | 위 배열과 같은 순서의 라벨 오버레이 경로 배열(JSON) |
 
-타일 위에 좌표를 직접 그릴 때는 원본 좌표에서 [연결정보.json](연결정보.json)의 타일 시작 위치 `x0`, `y0`를 뺍니다.
+타일 시작 위치와 기존 라벨 ID는 [연결정보.json](연결정보.json)에 있습니다.
 
 ## 정량용 컬럼
 
