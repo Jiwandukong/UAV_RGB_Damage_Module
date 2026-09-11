@@ -5,7 +5,7 @@ import json
 
 
 def main():
-    parser = argparse.ArgumentParser(description="시연용 데이터 준비 및 실제 512×512 SAM3 추가 학습")
+    parser = argparse.ArgumentParser(description="시연용 SAM3 원본 추론·산출물 생성 및 데이터 준비·학습")
     commands = parser.add_subparsers(dest="command", required=True)
     prepare = commands.add_parser("prepare", help="원본/라벨에서512타일과1픽셀균열마스크준비")
     prepare.add_argument("--source", required=True, help="Daechung_Demo20_GT_release_v1 폴더")
@@ -34,6 +34,16 @@ def main():
     quantify.add_argument("--asset-manifest", help="기존 OBJ의 SHA256·좌표계 기록; 생략 시 프로젝트 기본값")
     quantify.add_argument("--ray-backend", choices=["auto", "warp", "trimesh"], default="auto")
     quantify.add_argument("--warp-device", default="cpu", help="Ray 계산 장치; 기본CPU, 학습용GPU 불필요")
+    infer = commands.add_parser("infer", help="원본 사진→SAM3 추론→좌표·정량 CSV·512이미지; 라벨 불필요")
+    infer.add_argument("--images", required=True, help="원본 JPG/PNG 한 장 또는 사진 폴더")
+    infer.add_argument("--model-record", required=True, help="시연 모델의 학습기록.json; 라벨 파일 아님")
+    infer.add_argument("--output", required=True, help="새 결과 폴더; 기존 결과 덮어쓰기 금지")
+    infer.add_argument("--mesh", required=True, help="기존 EPSG:5186/Z-up OBJ")
+    infer.add_argument("--asset-manifest", help="기존 OBJ 검증 정보; 생략 시 프로젝트 기본값")
+    infer.add_argument("--device", choices=["auto", "cuda", "cpu"], default="auto")
+    infer.add_argument("--threshold", type=float, default=0.5)
+    infer.add_argument("--ray-backend", choices=["auto", "warp", "trimesh"], default="auto")
+    infer.add_argument("--warp-device", default="cpu", help="Ray 계산 장치; 모델 추론 장치와 별개")
     args = parser.parse_args()
     if args.command == "prepare":
         from demo512.data import prepare_dataset
@@ -55,6 +65,12 @@ def main():
         from demo512.quantification import export_demo
         result = export_demo(args.data, args.output, args.mesh, args.asset_manifest,
                              ray_backend=args.ray_backend, warp_device=args.warp_device)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    elif args.command == "infer":
+        from demo512.prediction_pipeline import export_predictions
+        result = export_predictions(args.images, args.output, args.model_record, args.mesh,
+                                    args.asset_manifest, device=args.device, threshold=args.threshold,
+                                    ray_backend=args.ray_backend, warp_device=args.warp_device)
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
         from demo512.batch_prediction import run_batch_prediction
