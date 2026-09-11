@@ -12,19 +12,17 @@ import json
 import math
 from pathlib import Path
 import shutil
-import sys
 import tempfile
 import time
 
 import numpy as np
 from PIL import Image
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(PROJECT_ROOT / "03_Processing" / "src"))
+DEMO_ROOT = Path(__file__).resolve().parents[2]
 
-from uav_rgb.asset_contract import load_mesh_asset_contract, verify_mesh_file, verify_loaded_mesh_geometry
-from uav_rgb.camera_pose import read_dji_xmp
-from uav_rgb.mesh_ray import MeshSurfaceIndex, build_mesh_ray_context_with_surface
+from .geometry.asset_contract import load_mesh_asset_contract, verify_mesh_file, verify_loaded_mesh_geometry
+from .geometry.camera_pose import read_dji_xmp
+from .geometry.mesh_ray import MeshSurfaceIndex, build_mesh_ray_context_with_surface
 from .report_contract import PRIMARY_COLUMNS, DAMAGE_NAMES_KO, write_csv, write_workbook, json_ready
 
 from .data import CLASSES, OVERLAY_ALPHA, overlay_metadata, render_overlay, sha256_file
@@ -260,7 +258,7 @@ def export_demo(data: str | Path, output: str | Path, mesh: str | Path,
     if not annotation_ids or len(set(annotation_ids)) != len(annotation_ids):
         raise ValueError("source annotation IDs must be unique and nonempty")
     source_paths = {source["id"]: _check_source(root, source) for source in sources}
-    manifest_path = Path(asset_manifest) if asset_manifest else PROJECT_ROOT / "01_RawData/manifests/assets.yaml"
+    manifest_path = Path(asset_manifest) if asset_manifest else DEMO_ROOT / "02.시연모델/댐3D모델/assets.yaml"
     contract = load_mesh_asset_contract(manifest_path)
     mesh_path = Path(mesh).resolve(strict=True)
     print("기존 OBJ의 파일 크기·SHA256 확인", flush=True)

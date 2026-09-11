@@ -7,23 +7,16 @@ The production mapper retains its rotated-rectangle and local mesh-GSD metrics.
 from __future__ import annotations
 
 import json
-from pathlib import Path
-import sys
 from typing import Any
 
 import numpy as np
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-_PROCESSING_SRC = str(PROJECT_ROOT / "03_Processing" / "src")
-if _PROCESSING_SRC not in sys.path:
-    sys.path.insert(0, _PROCESSING_SRC)
-
-from uav_rgb.instances import summarize_class_mask_instances
-from uav_rgb.mesh_ray import (
+from .geometry.instances import summarize_class_mask_instances
+from .geometry.mesh_ray import (
     MeshRayGeo3DContext, empty_mesh_hit, empty_surface_measurement,
     extract_contour_nodes,
 )
-from uav_rgb.metrics import ClassMasks, validate_class_masks
+from .geometry.metrics import ClassMasks, validate_class_masks
 
 
 CLASS_NAMES = {1: "CRC", 2: "DLM", 3: "SPL"}

@@ -12,19 +12,17 @@ import json
 import math
 from pathlib import Path
 import shutil
-import sys
 import tempfile
 import time
 
 import numpy as np
 from PIL import Image
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(PROJECT_ROOT / "03_Processing/src"))
+DEMO_ROOT = Path(__file__).resolve().parents[2]
 
-from uav_rgb.asset_contract import load_mesh_asset_contract, verify_mesh_file, verify_loaded_mesh_geometry
-from uav_rgb.camera_pose import read_dji_xmp
-from uav_rgb.mesh_ray import MeshSurfaceIndex, build_mesh_ray_context_with_surface
+from .geometry.asset_contract import load_mesh_asset_contract, verify_mesh_file, verify_loaded_mesh_geometry
+from .geometry.camera_pose import read_dji_xmp
+from .geometry.mesh_ray import MeshSurfaceIndex, build_mesh_ray_context_with_surface
 from .data import CLASSES, overlay_metadata, render_overlay, sha256_file
 from .prediction_geometry import quantify_predictions
 from .quantification import REQUIRED_XMP, review_measurement
@@ -199,7 +197,7 @@ def export_predictions(images: str | Path, output: str | Path,
         raise ValueError("output must be outside the source image folder")
     mesh_path = Path(mesh).expanduser().resolve(strict=True)
     manifest_path = (Path(asset_manifest).expanduser().resolve(strict=True) if asset_manifest
-                     else PROJECT_ROOT / "01_RawData/manifests/assets.yaml")
+                     else DEMO_ROOT / "02.시연모델/댐3D모델/assets.yaml")
     contract = load_mesh_asset_contract(manifest_path)
     mesh_verification = verify_mesh_file(mesh_path, contract)
     surface = MeshSurfaceIndex(mesh_path, ray_backend=ray_backend, warp_device=warp_device)

@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *.pt
 *.log
+*.partial
+.venv/
+.release_parts/
 # Publish only source photos/labels; regenerate training tiles/masks locally.
 01.시연데이터/*
 !01.시연데이터/README.md
@@ -14,6 +17,11 @@ __pycache__/
 # Publish final training records, never checkpoint weights or pilot runs.
 02.시연모델/*
 !02.시연모델/README.md
+!02.시연모델/댐3D모델/
+02.시연모델/댐3D모델/*
+!02.시연모델/댐3D모델/README.md
+!02.시연모델/댐3D모델/assets.yaml
+!02.시연모델/댐3D모델/release_manifest.json
 !02.시연모델/release/
 02.시연모델/release/*
 !02.시연모델/release/release_manifest.json

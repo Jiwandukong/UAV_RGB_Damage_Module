@@ -11,11 +11,10 @@ import pytest
 
 DEMO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(DEMO_ROOT / "code"))
-sys.path.insert(0, str(DEMO_ROOT.parent / "03_Processing" / "src"))
 
 from demo512.quant_geometry import quantify_source
-from uav_rgb.camera_pose import CameraIntrinsics, CameraPose
-from uav_rgb.mesh_ray import MeshRayGeo3DContext, empty_mesh_hit
+from demo512.geometry.camera_pose import CameraIntrinsics, CameraPose
+from demo512.geometry.mesh_ray import MeshRayGeo3DContext, empty_mesh_hit
 
 
 class AnalyticPlane:

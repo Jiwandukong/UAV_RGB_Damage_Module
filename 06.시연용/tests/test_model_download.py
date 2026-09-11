@@ -1,4 +1,4 @@
-"""Small real release parts exercise the demo wrapper and shared downloader."""
+"""Small release parts exercise downloaders from a standalone 06-only copy."""
 
 from functools import partial
 import hashlib
@@ -14,7 +14,6 @@ import pytest
 
 
 DEMO_ROOT = Path(__file__).resolve().parents[1]
-PROJECT_ROOT = DEMO_ROOT.parent
 
 
 @pytest.fixture
@@ -24,10 +23,10 @@ def release(tmp_path):
     project = tmp_path / "공백 있는 저장소"
     demo = project / "06.시연용"
     wrapper = demo / "code/모델받기.py"
-    downloader = project / "03_Processing/scripts/download_checkpoint.py"
     for source, destination in (
         (DEMO_ROOT / "code/모델받기.py", wrapper),
-        (PROJECT_ROOT / "03_Processing/scripts/download_checkpoint.py", downloader),
+        (DEMO_ROOT / "code/demo512/release_download.py", demo / "code/demo512/release_download.py"),
+        (DEMO_ROOT / "code/demo512/__init__.py", demo / "code/demo512/__init__.py"),
     ):
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
@@ -61,7 +60,7 @@ def release(tmp_path):
 
 def run_wrapper(release, *args):
     return subprocess.run(
-        [sys.executable, str(release["wrapper"]), *map(str, args)],
+        [sys.executable, "-S", str(release["wrapper"]), *map(str, args)],
         cwd=release["cwd"], capture_output=True, text=True, timeout=15,
     )
 
@@ -72,6 +71,7 @@ def test_defaults_reconstruct_from_external_working_directory(release):
     assert release["output"].read_bytes() == release["content"]
     assert "reconstructed and verified" in result.stdout
     assert not (release["cwd"] / "02.시연모델").exists()
+    assert not (release["wrapper"].parents[2] / "03_Processing").exists()
 
 
 def test_custom_relative_output_and_parts_directory(release):
@@ -124,6 +124,7 @@ def test_reconstructed_checkpoint_hash_is_verified(release):
     assert result.returncode != 0
     assert "reconstructed checkpoint SHA256 mismatch" in result.stderr
     assert not release["output"].exists()
+    assert not list(release["output"].parent.glob("*.partial"))
 
 
 def test_download_from_release_base_url(release):
@@ -160,3 +161,60 @@ def test_force_overwrite_is_not_exposed(release):
     assert result.returncode != 0
     assert "unrecognized arguments: --force" in result.stderr
     assert not release["output"].exists()
+
+
+@pytest.mark.parametrize("name", ["../escape.pt", "/absolute.pt", "part\\escape.pt", ".."])
+def test_unsafe_release_part_names_are_rejected(release, name):
+    release["manifest"]["parts"][0]["name"] = name
+    release["manifest_path"].write_text(json.dumps(release["manifest"]), encoding="utf-8")
+    result = run_wrapper(release, "--parts-dir", release["parts"])
+    assert result.returncode != 0
+    assert "unique plain ASCII filenames" in result.stderr
+    assert not release["output"].exists()
+
+
+def test_output_symlink_is_rejected_without_touching_its_target(release):
+    target = release["cwd"] / "existing.pt"
+    target.write_bytes(release["content"])
+    release["output"].parent.mkdir(parents=True)
+    release["output"].symlink_to(target)
+    result = run_wrapper(release, "--parts-dir", release["parts"])
+    assert result.returncode != 0 and "symbolic link" in result.stderr
+    assert release["output"].is_symlink()
+    assert target.read_bytes() == release["content"]
+
+
+def test_part_symlink_is_rejected(release):
+    part = release["parts"] / "sam3_demo512.pt.part001"
+    outside = release["cwd"] / "outside.part"
+    outside.write_bytes(part.read_bytes())
+    part.unlink()
+    part.symlink_to(outside)
+    result = run_wrapper(release, "--parts-dir", release["parts"])
+    assert result.returncode != 0 and "non-symlink" in result.stderr
+    assert not release["output"].exists()
+
+
+def test_later_http_failure_preserves_verified_part_and_removes_temporary_files(release):
+    class QuietHandler(SimpleHTTPRequestHandler):
+        def log_message(self, *args):
+            pass
+
+    second_part = release["parts"] / "sam3_demo512.pt.part002"
+    second_part.write_bytes(b"x" * second_part.stat().st_size)
+    server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(release["parts"])))
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    try:
+        result = run_wrapper(release, "--base-url", f"http://127.0.0.1:{server.server_port}")
+    finally:
+        server.shutdown()
+        server.server_close()
+        worker.join(timeout=5)
+    assert result.returncode != 0 and "download SHA256 mismatch" in result.stderr
+    assert not release["output"].exists()
+    cache = release["output"].parent / ".release_parts"
+    assert (cache / "sam3_demo512.pt.part001").read_bytes() == (
+        release["parts"] / "sam3_demo512.pt.part001").read_bytes()
+    assert not (cache / "sam3_demo512.pt.part002").exists()
+    assert not list(release["output"].parent.rglob("*.partial"))

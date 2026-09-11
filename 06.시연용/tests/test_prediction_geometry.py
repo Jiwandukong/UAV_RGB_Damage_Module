@@ -11,9 +11,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
 from demo512.prediction_geometry import quantify_predictions
-from uav_rgb.camera_pose import CameraIntrinsics, CameraPose
-from uav_rgb.instances import summarize_class_mask_instances
-from uav_rgb.mesh_ray import MeshRayGeo3DContext, empty_mesh_hit, empty_surface_measurement
+from demo512.geometry.camera_pose import CameraIntrinsics, CameraPose
+from demo512.geometry.instances import summarize_class_mask_instances
+from demo512.geometry.mesh_ray import MeshRayGeo3DContext, empty_mesh_hit, empty_surface_measurement
 
 
 def masks_for(height=64, width=64):

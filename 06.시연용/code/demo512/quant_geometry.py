@@ -16,8 +16,8 @@ from typing import Any
 import numpy as np
 from PIL import Image
 
-from uav_rgb.mesh_ray import MeshRayGeo3DContext, extract_contour_nodes
-from uav_rgb.surface_metrics import measure_oriented_pixel_geometry
+from .geometry.mesh_ray import MeshRayGeo3DContext, extract_contour_nodes
+from .geometry.surface_metrics import measure_oriented_pixel_geometry
 
 
 CLASS_IDS = {"CRC": 1, "DLM": 2, "SPL": 3}

@@ -5,18 +5,16 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-import subprocess
-import sys
+
+from demo512.release_download import restore_release
 
 
 DEMO_ROOT = Path(__file__).resolve().parents[1]
-PROJECT_ROOT = DEMO_ROOT.parent
 DEFAULT_MANIFEST = DEMO_ROOT / "02.시연모델/release/release_manifest.json"
 DEFAULT_OUTPUT = (
     DEMO_ROOT
     / "02.시연모델/손상타일489개_512입력_20회학습/sam3_demo512_학습완료.pt"
 )
-DOWNLOADER = PROJECT_ROOT / "03_Processing/scripts/download_checkpoint.py"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -39,22 +37,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--base-url", help="Release 다운로드 주소를 직접 지정할 때 사용합니다.")
     args = parser.parse_args(argv)
 
-    if not DOWNLOADER.is_file():
-        parser.error("03_Processing/scripts/download_checkpoint.py가 필요합니다. 저장소 전체를 받아 주세요.")
     manifest = args.manifest.expanduser().resolve()
     if not manifest.is_file():
         parser.error(f"모델 배포 정보 파일을 찾을 수 없습니다: {manifest}")
 
-    command = [
-        sys.executable, str(DOWNLOADER),
-        "--manifest", str(manifest),
-        "--output", str(args.output.expanduser().resolve()),
-    ]
-    if args.parts_dir is not None:
-        command.extend(["--parts-dir", str(args.parts_dir.expanduser().resolve())])
-    if args.base_url is not None:
-        command.extend(["--base-url", args.base_url])
-    return subprocess.run(command, check=False).returncode
+    try:
+        restore_release(manifest, args.output, parts_dir=args.parts_dir, base_url=args.base_url)
+    except (OSError, ValueError) as error:
+        parser.exit(1, f"모델을 받을 수 없습니다: {error}\n")
+    return 0
 
 
 if __name__ == "__main__":

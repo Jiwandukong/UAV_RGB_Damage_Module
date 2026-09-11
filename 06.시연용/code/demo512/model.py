@@ -28,8 +28,6 @@ from torch import nn
 from torch.nn import functional as F
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[4]
-UPSTREAM_ROOT = PROJECT_ROOT / "sam3"
 BASE_SHA256 = "a2749dba62207575afac9ed42f923d7cdfd7e2d2f0ffb2210a103e91657d985d"
 IMAGE_SIZE = 512
 PATCH_SIZE = 14
@@ -52,12 +50,15 @@ def _differentiable_vit_mlp(mlp: nn.Module, x: torch.Tensor) -> torch.Tensor:
 
 
 def _import_upstream():
-    """Use the repository's SAM3 copy without modifying its source or builders."""
+    """Use installed SAM3, or an explicitly selected development checkout.
+
+    Never discover SAM3 by walking out of the standalone demo folder.
+    """
     override = os.environ.get("SAM3_SOURCE")
-    selected = Path(override).expanduser().resolve() if override else UPSTREAM_ROOT
+    selected = Path(override).expanduser().resolve() if override else None
     if override and not (selected / "sam3/model_builder.py").is_file():
         raise ValueError("SAM3_SOURCE must point to the SAM3 repository root")
-    explicit_source = selected.is_dir()
+    explicit_source = selected is not None
     if explicit_source and str(selected) not in sys.path:
         sys.path.insert(0, str(selected))
     import sam3

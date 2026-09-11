@@ -1,0 +1,19 @@
+# Standalone demo runtime. Install SAM3 at the revision in code/플랫폼추론.md.
+# PyTorch / torchvision must be installed as a matching pair for the target machine.
+torch>=2.7
+torchvision>=0.22
+numpy>=1.26,<2
+Pillow>=10
+PyYAML>=6
+opencv-python>=4.8,<4.12
+scikit-image>=0.22
+pyproj>=3.6
+trimesh>=4
+rtree>=1.2
+tqdm>=4.66
+openpyxl>=3.1
+warp-lang>=1.8
+# SAM3 model-builder imports not fully declared by its package metadata.
+setuptools>=68,<81
+einops>=0.8
+psutil>=5.9
