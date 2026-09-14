@@ -48,6 +48,12 @@ import sys
 
 demo = Path(sys.argv[1]).resolve()
 blocked_roots = [Path(item).resolve() for item in json.loads(sys.argv[2])]
+# Editable installs in a developer environment can add legacy directories to
+# sys.path. Remove them before third-party package metadata scans; the guards
+# below still reject any attempted legacy import or subsequent file access.
+sys.path = [entry for entry in sys.path if not any(
+    Path(entry).resolve().is_relative_to(root) for root in blocked_roots
+)]
 
 class NoLegacyImports(importlib.abc.MetaPathFinder):
     def find_spec(self, fullname, path=None, target=None):
@@ -155,6 +161,36 @@ def test_sam3_import_uses_installed_package_without_parent_discovery(copied_demo
         print("installed SAM3 selected without adding a parent checkout: OK")
     ''')
     assert "without adding a parent checkout: OK" in output
+
+
+@pytest.mark.parametrize("package", ["setuptools", "einops", "psutil", "pycocotools"])
+def test_runtime_requirements_cover_sam3_builder_imports(package):
+    # SAM3 imports these at runtime without declaring them as base dependencies.
+    # Check the install list as well as the machine's installed packages: an
+    # existing development environment can otherwise hide a missing dependency.
+    from importlib.metadata import version
+    from packaging.requirements import Requirement
+
+    requirements = {}
+    for line in (DEMO_ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines():
+        line = line.split("#", 1)[0].strip()
+        if line:
+            requirement = Requirement(line)
+            requirements[requirement.name.lower()] = requirement
+    assert package in requirements, f"Missing runtime dependency: {package}"
+    assert requirements[package].specifier.contains(version(package))
+
+
+def test_copied_model_builder_imports_real_installed_sam3(copied_demo):
+    output = run_isolated(copied_demo, '''
+        from demo512.model import _import_upstream
+
+        builder = _import_upstream()
+        tokenizer = Path(builder.__file__).resolve().parent / "assets/bpe_simple_vocab_16e6.txt.gz"
+        assert tokenizer.is_file(), "SAM3 installation is missing its tokenizer asset"
+        print("real installed SAM3 builder and tokenizer: OK")
+    ''')
+    assert "real installed SAM3 builder and tokenizer: OK" in output
 
 
 def test_runtime_has_no_legacy_package_or_folder_dependencies():

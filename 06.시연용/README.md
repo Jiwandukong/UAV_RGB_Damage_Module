@@ -23,6 +23,7 @@
 ### 1. 설치 — 처음 한 번
 
 Python 3.11과 Git이 필요합니다. 아래 명령은 Linux·NVIDIA GPU 기준이며, 현재 시연 모델의 실데이터 추론을 GPU 환경에서 검증했습니다.
+주요 실행 패키지는 제공된 결과를 만든 검증 버전으로 고정했습니다.
 
 ```bash
 python3.11 -m venv .venv
@@ -30,7 +31,11 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pip install "git+https://github.com/facebookresearch/sam3.git@46957e47805eaa273f4aa7bbbd25a88bca9108ce"
+python -m pip check
 ```
+
+마지막 명령에서 `No broken requirements found.`가 나오면 패키지 의존성 검사를 통과한 것입니다.
+기존 설치자는 가상환경 활성화 후 `python -m pip install -r requirements.txt`를 다시 실행하면 검증 버전으로 맞춰지고, 누락됐던 `pycocotools`도 설치됩니다.
 
 ### 2. 모델 다운로드 — 처음 한 번
 
@@ -97,16 +102,6 @@ python code/시연도구.py infer \
 | `source_image_path` | 자르기 전 원본 사진 경로 |
 | `tile_original_paths_json` | 해당 손상의 원본 타일 경로 배열(JSON) |
 | `tile_overlay_paths_json` | 같은 순서의 오버레이 경로 배열(JSON) |
-
-**빈칸은 0이 아니라 해당 없음 또는 계산 보류입니다.** 좌표가 비어 있으면 3D 표시점을 만들지 않습니다.
-오버레이 색상은 CRC 초록·DLM 파랑·SPL 노랑, 불투명도는 50%입니다.
-
-예측에는 오탐이 포함될 수 있으며, 사진 간 중복 손상을 합치지 않았습니다.
-이 사진들은 시연 모델의 학습에 사용한 사진이므로 일반화 성능 평가 자료가 아닙니다.
-정량값은 근사치이며 실제 측량이나 구조 안전 판정을 대신하지 않습니다.
-
-검증용 마스크·상세 계산 기록은 추론 명령에 `--save-diagnostics`를 추가했을 때만 저장합니다.
-개발 테스트는 `python -m pip install -r requirements-dev.txt` 후 `PYTHONPATH=code python -m pytest code/tests -q`로 실행합니다.
 
 ## 이용 조건
 
