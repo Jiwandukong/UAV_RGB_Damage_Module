@@ -10,10 +10,10 @@ from demo512.release_download import restore_release
 
 
 DEMO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_MANIFEST = DEMO_ROOT / "02.시연모델/release/release_manifest.json"
+DEFAULT_MANIFEST = DEMO_ROOT / "02.시연모델/SAM3/release_manifest.json"
 DEFAULT_OUTPUT = (
     DEMO_ROOT
-    / "02.시연모델/손상타일489개_512입력_20회학습/sam3_demo512_학습완료.pt"
+    / "02.시연모델/SAM3/sam3_demo512_학습완료.pt"
 )
 
 
@@ -24,7 +24,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--output", type=Path, default=DEFAULT_OUTPUT,
-        help="모델 저장 경로 (기본: 02.시연모델의 20회학습 폴더).",
+        help="모델 저장 경로 (기본: 02.시연모델/SAM3 폴더).",
     )
     parser.add_argument(
         "--parts-dir", type=Path,

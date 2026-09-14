@@ -36,7 +36,7 @@ PRIMARY_COLUMNS = [
     "tile_overlay_paths_json",
 ]
 DETAIL_COLUMNS = PRIMARY_COLUMNS
-SCHEMA_PATH = Path(__file__).resolve().parents[2] / "schemas/damage_results.schema.json"
+SCHEMA_PATH = Path(__file__).resolve().parents[1] / "damage_results.schema.json"
 
 
 def write_workbook(

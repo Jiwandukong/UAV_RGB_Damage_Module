@@ -2,39 +2,28 @@ __pycache__/
 .pytest_cache/
 *.py[cod]
 *.pt
-*.log
+*.pth
+*.obj
+*.glb
 *.partial
+*.log
 .venv/
 .release_parts/
-# Publish only source photos/labels; regenerate training tiles/masks locally.
+.model-results-*/
 01.시연데이터/*
-!01.시연데이터/README.md
-!01.시연데이터/원본자료/
-01.시연데이터/원본자료/*
-!01.시연데이터/원본자료/Daechung_Demo20_GT_release_v1/
-01.시연데이터/원본자료/Daechung_Demo20_GT_release_v1/*
-!01.시연데이터/원본자료/Daechung_Demo20_GT_release_v1/01_Dataset/
-# Publish final training records, never checkpoint weights or pilot runs.
+!01.시연데이터/원본사진/
 02.시연모델/*
-!02.시연모델/README.md
+!02.시연모델/SAM3/
 !02.시연모델/댐3D모델/
+02.시연모델/SAM3/*
+!02.시연모델/SAM3/학습기록.json
+!02.시연모델/SAM3/release_manifest.json
 02.시연모델/댐3D모델/*
-!02.시연모델/댐3D모델/README.md
 !02.시연모델/댐3D모델/assets.yaml
 !02.시연모델/댐3D모델/release_manifest.json
-!02.시연모델/release/
-02.시연모델/release/*
-!02.시연모델/release/release_manifest.json
-!02.시연모델/손상타일489개_512입력_20회학습/
-02.시연모델/손상타일489개_512입력_20회학습/*
-!02.시연모델/손상타일489개_512입력_20회학습/학습기록.json
-!02.시연모델/손상타일489개_512입력_20회학습/학습진행.jsonl
-# Publish the complete final prediction comparison, not pilot runs.
-03.모델예측/*
-!03.모델예측/README.md
-!03.모델예측/20회학습_손상타일489개_오버레이/
-# 04.시연산출물 is the complete public platform handoff, including linked images.
-04.시연산출물*/
-!04.시연산출물/
-.publication-*/
-.model-results-*/
+# Only the two reviewed handoff bundles are published. New runs stay local.
+04.시연산출물/*
+!04.시연산출물/모델추론결과/
+!04.시연산출물/라벨참고결과/
+04.시연산출물/**/모델예측마스크/
+04.시연산출물/**/추론계산기록.json

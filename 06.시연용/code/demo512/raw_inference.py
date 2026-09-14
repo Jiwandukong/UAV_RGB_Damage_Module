@@ -7,6 +7,7 @@ right/bottom padding is black and is excluded from the stitched predictions.
 
 from __future__ import annotations
 
+from contextlib import nullcontext
 import hashlib
 import json
 import math
@@ -18,11 +19,26 @@ import numpy as np
 import torch
 
 from . import CLASSES, INPUT_SIZE
-from .batch_prediction import _predict_masks
 
 
 TileCallback = Callable[[dict, np.ndarray, dict[str, np.ndarray]], None]
 EXPECTED_READOUT = "sam3_existing_text_conditioned_semantic_head"
+
+
+def _predict_masks(model, rgb, valid, threshold, device, forward, use_bfloat16) -> dict:
+    """No GT, tile metadata, annotations, or dataset paths enter this function."""
+    tensor = torch.from_numpy(rgb.copy()).permute(2, 0, 1).float().div(255).unsqueeze(0).to(device)
+    context = torch.autocast("cuda", dtype=torch.bfloat16) if use_bfloat16 else nullcontext()
+    masks = {}
+    with torch.no_grad(), context:
+        for label in CLASSES:
+            logits = forward(model, tensor, label)
+            if tuple(logits.shape) != (1, 1, INPUT_SIZE, INPUT_SIZE):
+                raise ValueError("model must return native [1,1,512,512] semantic logits")
+            if not bool(torch.isfinite(logits).all()):
+                raise ValueError("non-finite model logits")
+            masks[label] = (logits.float().sigmoid()[0, 0].cpu().numpy() >= threshold) & valid
+    return masks
 
 
 class RawInferenceEngine:

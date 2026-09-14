@@ -1,4 +1,4 @@
-"""Isolated Demo20 training tools; never modifies the production pipeline."""
+"""Standalone native-512 inference and platform deliverables."""
 
 INPUT_SIZE = 512
 CRACK_LINE_WIDTH = 1

@@ -1,4 +1,4 @@
-# Standalone demo runtime. Install SAM3 at the revision in code/플랫폼추론.md.
+# Standalone demo runtime. Install SAM3 at the revision in README.md.
 # PyTorch / torchvision must be installed as a matching pair for the target machine.
 torch>=2.7
 torchvision>=0.22

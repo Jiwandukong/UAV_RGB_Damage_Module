@@ -25,7 +25,7 @@ from .geometry.camera_pose import read_dji_xmp
 from .geometry.mesh_ray import MeshSurfaceIndex, build_mesh_ray_context_with_surface
 from .data import CLASSES, overlay_metadata, render_overlay, sha256_file
 from .prediction_geometry import quantify_predictions
-from .quantification import REQUIRED_XMP, review_measurement
+from .geometry.measurement_review import REQUIRED_XMP, review_measurement
 from .raw_inference import RawInferenceEngine
 from .report_contract import PRIMARY_COLUMNS, DAMAGE_NAMES_KO, json_ready, write_csv, write_workbook
 
@@ -127,66 +127,12 @@ def _prediction_row(image: Path, result: dict, damage_id: str,
     return row, detail
 
 
-def _readme(summary: dict) -> str:
-    return f"""# 모델 추론 산출물
-
-**SAM3가 원본 사진에서 실제로 예측한 결과입니다. 라벨을 사용하지 않았습니다.**
-원본 {summary['images']}장 · 예측 손상 {summary['rows']}건 · 512×512 타일 {summary['tiles']}장입니다.
-
-## 결과 위치와 의미
-
-| 자료 | 위치 | 의미 |
-|---|---|---|
-| CSV | [damage_results.csv](damage_results.csv) | 예측 손상별 위치·정량값·이미지 경로 |
-| Excel | [damage_results.xlsx](damage_results.xlsx) | CSV와 같은 내용, Damage_Details 시트 |
-| 원본 사진 | [원본사진/](원본사진/) | 자르기 전 원본 JPG/PNG |
-| 원본 타일 | [512원본타일/](512원본타일/) | 모든 원본 영역의 512×512 이미지 |
-| 모델 오버레이 | [512모델예측오버레이/](512모델예측오버레이/) | 같은 파일명의 타일에 예측 손상을 표시한 이미지 |
-| 예측 마스크 | [모델예측마스크/](모델예측마스크/) | 원본 사진 크기의 CRC·DLM·SPL별 이진 마스크 |
-| 이미지 연결 정보 | [연결정보.json](연결정보.json) | 손상 ID·타일·원본 내 타일 위치 |
-| 추론·계산 기록 | [추론계산기록.json](추론계산기록.json) | 모델 식별정보와 계산 보류 사유 |
-
-모든 이미지 경로는 이 CSV가 있는 폴더 기준입니다. 원본 타일과 모델 오버레이는 같은 파일명으로 대응합니다.
-손상이 타일 여러 장에 걸치면 경로 배열에 함께 연결되며, 첫 항목은 대표 표시점의 타일입니다.
-손상이 없다고 예측한 타일도 이미지 목록에 포함되지만 CSV에 가짜 손상 행을 만들지 않습니다.
-손상 ID는 이 결과 묶음 안에서만 유일하며, 라벨 기준 결과의 같은 ID와 동일한 손상을 뜻하지 않습니다.
-
-## 표출용 컬럼
-
-| 컬럼 | 의미 |
-|---|---|
-| image | 자르기 전 원본 사진 파일명 |
-| damage_id | 이 결과 묶음의 예측 손상 ID, D000001 형식 |
-| damage_type | CRC = Crack(균열), DLM = Delamination(박리), SPL = Spalling(박락) |
-| damage_name_ko | 손상 종류의 한글 이름 |
-| pixel_nodes_json | 원본 사진 기준 손상 외곽선 표본 좌표 |
-| world_center_x_m, world_center_y_m, world_center_z_m | 3D 표시점(m). X/Y는 EPSG:5186, Z는 기존 OBJ 고도 |
-| source_image_path | 자르기 전 원본 사진 경로 |
-| tile_original_paths_json | 해당 예측 손상의 원본 타일 경로 배열(JSON) |
-| tile_overlay_paths_json | 같은 순서의 **모델 예측 오버레이** 경로 배열(JSON) |
-
-## 정량용 컬럼
-
-| 컬럼 | 의미 |
-|---|---|
-| length_px, length_m | CRC 예측 영역을 감싸는 최소면적 회전사각형의 긴 변, px·m |
-| width_px, width_m | 같은 사각형의 짧은 변, px·m. 실제 균열 개구폭이 아님 |
-| area_m2 | DLM·SPL 예측 영역의 근사 면적, m² |
-
-좌표가 있는 손상은 {summary['mapped_rows']}건, 물리 정량값을 제공하는 손상은 {summary['physical_values_exported']}건입니다.
-**빈칸은 0이 아니라 해당 없음 또는 계산 보류입니다.** 좌표가 비어 있으면 3D 표시점을 만들지 않습니다.
-CRC 면적과 DLM·SPL 길이·폭은 빈칸이며, 모든 물리 정량값은 근사치입니다.
-예측에는 오탐이 포함될 수 있고 사진 간 같은 손상을 합치지 않았으므로 전체 합계를 댐 전체 손상량으로 사용하지 마십시오.
-
-색상은 CRC 초록·DLM 파랑·SPL 노랑, 오버레이 불투명도는 50%입니다.
-"""
-
-
 def export_predictions(images: str | Path, output: str | Path,
                        model_record: str | Path, mesh: str | Path,
                        asset_manifest: str | Path | None = None, *,
                        device: str = "auto", threshold: float = 0.5,
-                       ray_backend: str = "auto", warp_device: str = "cpu") -> dict:
+                       ray_backend: str = "auto", warp_device: str = "cpu",
+                       save_diagnostics: bool = False) -> dict:
     started = time.monotonic()
     source, image_paths = _source_images(images)
     requested = Path(output).expanduser().absolute()
@@ -212,8 +158,9 @@ def export_predictions(images: str | Path, output: str | Path,
         staging.mkdir()
         for name in ("원본사진", "512원본타일", "512모델예측오버레이"):
             (staging / name).mkdir()
-        for label in CLASSES:
-            (staging / "모델예측마스크" / label).mkdir(parents=True)
+        if save_diagnostics:
+            for label in CLASSES:
+                (staging / "모델예측마스크" / label).mkdir(parents=True)
         for image_number, image in enumerate(image_paths, 1):
             image_started = time.monotonic()
             digest = sha256_file(image)
@@ -258,9 +205,10 @@ def export_predictions(images: str | Path, output: str | Path,
                 mask = class_masks[index]
                 if mask.dtype != np.bool_ or mask.shape != (height, width):
                     raise ValueError("prediction masks must remain in the original image grid")
-                relative = f"모델예측마스크/{label}/{image.stem}.png"
-                Image.fromarray(mask.astype(np.uint8) * 255).save(staging / relative)
-                mask_paths[label] = relative
+                if save_diagnostics:
+                    relative = f"모델예측마스크/{label}/{image.stem}.png"
+                    Image.fromarray(mask.astype(np.uint8) * 255).save(staging / relative)
+                    mask_paths[label] = relative
             print("  예측 손상 분리·좌표·정량 계산", flush=True)
             measured = quantify_predictions(class_masks, context)
             for result in measured["instances"]:
@@ -307,21 +255,21 @@ def export_predictions(images: str | Path, output: str | Path,
             "tiles": tile_records,
             "damages": [{key: value for key, value in item.items()
                          if key not in {"review", "raw_legacy_mapping_and_measurement"}} for item in calculations]})
-        _dump(staging / "추론계산기록.json", {
-            "created_utc": datetime.now(timezone.utc).isoformat(),
-            "result_source": "model_predictions_without_ground_truth", "ground_truth_used": False,
-            "model_loaded": True, "source_resized": False, "tile_selection": "all_source_tiles",
-            "model": engine.metadata, "summary": summary, "columns": list(PRIMARY_COLUMNS),
-            "mesh": {"contract": contract.to_dict(), "file_verification": mesh_verification,
-                     "geometry_verification": geometry_verification,
-                     "ray_backend": surface.ray_backend, "warp_device": warp_device},
-            "measurement": {"approximate": True, "crc_width_is_physical_aperture": False,
-                            "connected_components": "8_connectivity_per_class_on_full_original_image",
-                            "min_area_px": 1, "independent_overlapping_classes": True,
-                            "review_ratio_threshold": 10.0},
-            "images": image_records, "damages": calculations,
-            "elapsed_seconds": time.monotonic() - started}, compact=True)
-        (staging / "README.md").write_text(_readme(summary), encoding="utf-8")
+        if save_diagnostics:
+            _dump(staging / "추론계산기록.json", {
+                "created_utc": datetime.now(timezone.utc).isoformat(),
+                "result_source": "model_predictions_without_ground_truth", "ground_truth_used": False,
+                "model_loaded": True, "source_resized": False, "tile_selection": "all_source_tiles",
+                "model": engine.metadata, "summary": summary, "columns": list(PRIMARY_COLUMNS),
+                "mesh": {"contract": contract.to_dict(), "file_verification": mesh_verification,
+                         "geometry_verification": geometry_verification,
+                         "ray_backend": surface.ray_backend, "warp_device": warp_device},
+                "measurement": {"approximate": True, "crc_width_is_physical_aperture": False,
+                                "connected_components": "8_connectivity_per_class_on_full_original_image",
+                                "min_area_px": 1, "independent_overlapping_classes": True,
+                                "review_ratio_threshold": 10.0},
+                "images": image_records, "damages": calculations,
+                "elapsed_seconds": time.monotonic() - started}, compact=True)
         if destination.exists() or destination.is_symlink():
             raise FileExistsError("output appeared during inference; refusing to replace it")
         staging.rename(destination)
