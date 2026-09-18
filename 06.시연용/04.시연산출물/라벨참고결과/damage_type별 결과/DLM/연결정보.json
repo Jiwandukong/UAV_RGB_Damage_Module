@@ -1,0 +1,2123 @@
+{
+  "path_base": "this_output_folder",
+  "tile_size": 512,
+  "columns": [
+    "image",
+    "damage_id",
+    "damage_type",
+    "damage_name_ko",
+    "pixel_nodes_json",
+    "world_center_x_m",
+    "world_center_y_m",
+    "world_center_z_m",
+    "length_px",
+    "length_m",
+    "width_px",
+    "width_m",
+    "area_m2",
+    "source_image_path",
+    "tile_original_paths_json",
+    "tile_overlay_paths_json"
+  ],
+  "overlay": {
+    "class_colors_rgb": {
+      "DLM": [
+        0,
+        0,
+        255
+      ]
+    },
+    "paint_order": [
+      "DLM"
+    ],
+    "overlap_rule": "last listed class wins in RGB overlay only; all binary masks and instances preserved",
+    "alpha": 0.5,
+    "blending_rule": "select the top class color, then blend once with original RGB; background unchanged"
+  },
+  "tiles": [
+    {
+      "tile_id": "DJI_20250702150745_0300_V__x01024_y01024",
+      "source_id": "DJI_20250702150745_0300_V",
+      "x0": 1024,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702150745_0300_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20250702150745_0300_V__x01024_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702150745_0300_V__x01024_y01024.png",
+      "original_sha256": "51e1555e78f8ab203900169c9c7520e0b71dc57eb978583489f213a960c33dc5",
+      "overlay_sha256": "43b7bf4b45ced392d1d0328bd6acdf3992ac4dacb565e99e851228053b05c973"
+    },
+    {
+      "tile_id": "DJI_20250702150745_0300_V__x01536_y00512",
+      "source_id": "DJI_20250702150745_0300_V",
+      "x0": 1536,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702150745_0300_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702150745_0300_V__x01536_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702150745_0300_V__x01536_y00512.png",
+      "original_sha256": "d9d7c5fff1622b0972f12cf3c33ec2b18575e3234c83cec0fef7f5051fac39fa",
+      "overlay_sha256": "0ef7b132270bbfb11ef468a44ac5f35a800e73579ad01249845984cdf40d9cd1"
+    },
+    {
+      "tile_id": "DJI_20250702150745_0300_V__x02048_y00512",
+      "source_id": "DJI_20250702150745_0300_V",
+      "x0": 2048,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702150745_0300_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20250702150745_0300_V__x02048_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702150745_0300_V__x02048_y00512.png",
+      "original_sha256": "70c5c909ce2c64170f9867f44386742767629c7d7ecd6a286c82c2791d99e428",
+      "overlay_sha256": "d0c0d778219b839b8306f544cebacf5ad9146cbcb4049035fcf39e01a744f731"
+    },
+    {
+      "tile_id": "DJI_20250702150745_0300_V__x02048_y01536",
+      "source_id": "DJI_20250702150745_0300_V",
+      "x0": 2048,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702150745_0300_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702150745_0300_V__x02048_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702150745_0300_V__x02048_y01536.png",
+      "original_sha256": "f4761e5e567a19299317af1493f8501a94286a259e39f0c639ba29803f36d2a0",
+      "overlay_sha256": "319db40e7a98111e626d99581145fe41d6c4bfa16c994ea7cfbe40b65ad61d06"
+    },
+    {
+      "tile_id": "DJI_20250702150745_0300_V__x04096_y01536",
+      "source_id": "DJI_20250702150745_0300_V",
+      "x0": 4096,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702150745_0300_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20250702150745_0300_V__x04096_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702150745_0300_V__x04096_y01536.png",
+      "original_sha256": "ba38f30c989e6d0f3266e29fb225c5203e61e05a67d99da61dd14174e2e08016",
+      "overlay_sha256": "abd3593cf4f8c8ad1c1a53007169fada2d0e23f7fab7b4d6cba72918abc280fa"
+    },
+    {
+      "tile_id": "DJI_20250702151015_0500_V__x00512_y00000",
+      "source_id": "DJI_20250702151015_0500_V",
+      "x0": 512,
+      "y0": 0,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702151015_0500_V__DLM_0004"
+      ],
+      "image_path": "512원본타일/DJI_20250702151015_0500_V__x00512_y00000.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702151015_0500_V__x00512_y00000.png",
+      "original_sha256": "4910915956f355f54393dc798e3b52323dd633b8748db06b7fb1543f169c88f8",
+      "overlay_sha256": "5fbe264435d6f6e24e8feef57eb26d9d34076b382ff94223dadbf313df9b2859"
+    },
+    {
+      "tile_id": "DJI_20250702151015_0500_V__x01024_y02048",
+      "source_id": "DJI_20250702151015_0500_V",
+      "x0": 1024,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702151015_0500_V__DLM_0005",
+        "DJI_20250702151015_0500_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20250702151015_0500_V__x01024_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702151015_0500_V__x01024_y02048.png",
+      "original_sha256": "8dcfda52deca2d32f976545e4bb2315343400e4f8de372b1fb9d3a98532ece72",
+      "overlay_sha256": "9534e3d67b5efcfc89769617a2389b3c59ecd6747af4b9403058a7012da06b70"
+    },
+    {
+      "tile_id": "DJI_20250702151015_0500_V__x01024_y02560",
+      "source_id": "DJI_20250702151015_0500_V",
+      "x0": 1024,
+      "y0": 2560,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702151015_0500_V__DLM_0005",
+        "DJI_20250702151015_0500_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20250702151015_0500_V__x01024_y02560.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702151015_0500_V__x01024_y02560.png",
+      "original_sha256": "a9ceb5b28c12c80e8902eafac8b267267d0c14c86805228d28a29fe05a0a3c3f",
+      "overlay_sha256": "431071d89f296f38fab935360c675381ff4b24c16348c5a5c0c728912fe55697"
+    },
+    {
+      "tile_id": "DJI_20250702151015_0500_V__x02048_y00000",
+      "source_id": "DJI_20250702151015_0500_V",
+      "x0": 2048,
+      "y0": 0,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702151015_0500_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702151015_0500_V__x02048_y00000.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702151015_0500_V__x02048_y00000.png",
+      "original_sha256": "ff8aca0800c09dc0b655b56fae621a60ed6c5c4bde4ea4072ffa6ffa3f0148d4",
+      "overlay_sha256": "97898bdaf269b3b6fda93e47089b0a220efaf8cad38d6df5a56d2f8cf3f4a91d"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x01024_y01536",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 1024,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x01024_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x01024_y01536.png",
+      "original_sha256": "6721b3a686dad3e20c7419cdc3f2283a22d37a90d4ed8ae75b7a73f4d1db6545",
+      "overlay_sha256": "0dfae97bab38592b4dcf4b12268db26699dd8d2a9b383d058019aa231fb45e42"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x01536_y01536",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 1536,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0003",
+        "DJI_20250702160538_0800_V__DLM_0004"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x01536_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x01536_y01536.png",
+      "original_sha256": "14758d4c2b77b1c3242d56a068c1f4d58adb687f531aaa16fd211ffd79038c46",
+      "overlay_sha256": "fb5a272f037c0b7b434cccaec2e59d367a9e4d4f941efaf25a470ae11bf0c380"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x02048_y02048",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 2048,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x02048_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x02048_y02048.png",
+      "original_sha256": "9874a74e1e7c6461eed346b0ce5aaa69e25614fd5d3d48589009e1f28c5123e5",
+      "overlay_sha256": "a9b002b513f83f478b567392a50b1d59cb4c5710f5655f2d2ed39d9532d1d6e1"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x03072_y03072",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 3072,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x03072_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x03072_y03072.png",
+      "original_sha256": "71de8f783e08b8a1d518f11b3a00392dee8020b85787c688e1b058f0e87e249c",
+      "overlay_sha256": "e30f8bb798b23a23bad2001a92483e16d7da13ac27fec842ba39da57e508abbe"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x03584_y00512",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 3584,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x03584_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x03584_y00512.png",
+      "original_sha256": "bd30d2afa79a40a41b25eb297970a237e4c31c6808229fccd21188c7305473cc",
+      "overlay_sha256": "fc0b18ec76cbe05fab41e70e1914f85f259faf7e50aaabd579bcffca778de8aa"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x03584_y01024",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 3584,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x03584_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x03584_y01024.png",
+      "original_sha256": "2455f77a3f0eae5052282999555c201b3c16fbab01302197b2c85a27e7143a5f",
+      "overlay_sha256": "8ef0ceba7f80dc985823409aefb760bf2fa88e9e71d4744059149c5df86f3945"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x03584_y02048",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 3584,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x03584_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x03584_y02048.png",
+      "original_sha256": "5942da2c6629980f4292568de9dfb3b971b9cfdc2afb632ea91626ae4c769cdc",
+      "overlay_sha256": "844aa619b4d8fb85f21037ab4132b7a717f5c507c3194a639cebed97528418b6"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x04096_y01024",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 4096,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0001",
+        "DJI_20250702160538_0800_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x04096_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x04096_y01024.png",
+      "original_sha256": "6db8a68c8cdceedc3249f89b481915df553d2227c6b5a495b32b5580afc4ea05",
+      "overlay_sha256": "c00d13f34edd9458fe74971c0ba0f3ac5d3734374acb86f86d84b4d8491e1821"
+    },
+    {
+      "tile_id": "DJI_20250702160538_0800_V__x04096_y02048",
+      "source_id": "DJI_20250702160538_0800_V",
+      "x0": 4096,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160538_0800_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20250702160538_0800_V__x04096_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160538_0800_V__x04096_y02048.png",
+      "original_sha256": "3d2badbfd38777db99ec96059eecc720184c3e19631a4f122dc62193f754bab4",
+      "overlay_sha256": "98860eb5019b3ad37dc8866e422aa48475362bd71a29b5421207be88bf3be0df"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x00512_y01024",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 512,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x00512_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x00512_y01024.png",
+      "original_sha256": "2239dffad660a97276e680404c783ff0c260e788bffba612ba77403d43641c71",
+      "overlay_sha256": "dac50dcf2947c2852f138b46f725de40517b173ec61e340df26e83c5ef92a6b3"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x00512_y01536",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 512,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x00512_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x00512_y01536.png",
+      "original_sha256": "38d1c1087889dd1a572589483a272082a32e119ed0d8735c07229cfac25eed91",
+      "overlay_sha256": "93a57f8d8632ff48183734c1d6a1703ccb688b933085826af18b4558d5a50894"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x01024_y00512",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 1024,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0001",
+        "DJI_20250702160658_0900_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x01024_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x01024_y00512.png",
+      "original_sha256": "74976413fc4487086eaadca7e101793c0e4222e4e314c6e14ad43d6bf91a5450",
+      "overlay_sha256": "ba94dd565b67569939bf6baf1bda2541bdb8d283e2bb564e2c7e1c2e7a9cde92"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x01024_y01024",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 1024,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0002",
+        "DJI_20250702160658_0900_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x01024_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x01024_y01024.png",
+      "original_sha256": "0be6ee3934ae880c334fdb942e35911dbd074a99163728652b032d23d7a47777",
+      "overlay_sha256": "72836462a420be147bda93d74aa074fb55112c396fb3014865e6f065d927da34"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x01024_y01536",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 1024,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x01024_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x01024_y01536.png",
+      "original_sha256": "309f8002db002fb83545d6d0efd4db72e2c5d2d711c490277f338fbb41ddb710",
+      "overlay_sha256": "da426b22376659790b90260499e31767b880ec3a98ef3a4abb4869b9a5bfcf1d"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x01536_y00512",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 1536,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x01536_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x01536_y00512.png",
+      "original_sha256": "f1cecee0b5ecec7c9ba5ef3e594fb08d6ec3dcaf08069567772058baafc54cb2",
+      "overlay_sha256": "0326e706e56a1b9a8b8e4b1eb678b2a4c7ad4918ff846b9d56bfa25ca4cbb1df"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x01536_y01024",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 1536,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x01536_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x01536_y01024.png",
+      "original_sha256": "101299bbb7a6941895f39aa9f8c072f28b4b54a9afe4e44c95647b991dbab0f0",
+      "overlay_sha256": "372d5187e38f1ae70bc69c73355a699a126f57516a56116b9577e6cfb4429be0"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x02048_y00512",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 2048,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x02048_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x02048_y00512.png",
+      "original_sha256": "8ba443ea6a5142c2bedd35acbae7d211617887863cb7b0c314a7253939722f78",
+      "overlay_sha256": "1f5cd81b87fc6cd0a37dfdd440398f47d5c91288452d302add12744cc27fa77c"
+    },
+    {
+      "tile_id": "DJI_20250702160658_0900_V__x02048_y01024",
+      "source_id": "DJI_20250702160658_0900_V",
+      "x0": 2048,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702160658_0900_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20250702160658_0900_V__x02048_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702160658_0900_V__x02048_y01024.png",
+      "original_sha256": "cb08f56bc25c74ba95735e96e5c37c1547e71c556c3492e7e824776ea761727a",
+      "overlay_sha256": "c53a00eba082970f3077b6a6230d168dba2b6ee32f815a7d34fee57699ce1a33"
+    },
+    {
+      "tile_id": "DJI_20250702165251_0480_V__x03072_y01536",
+      "source_id": "DJI_20250702165251_0480_V",
+      "x0": 3072,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20250702165251_0480_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20250702165251_0480_V__x03072_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20250702165251_0480_V__x03072_y01536.png",
+      "original_sha256": "f9b9c08ca14ad123d96fca480d5491b42b7fa019a6fc9bb2177ac296e9112c5b",
+      "overlay_sha256": "938e56eb2838ff235da434e172f36f6a83ee442fa412f9c5c1bd08b014864faa"
+    },
+    {
+      "tile_id": "DJI_20260826093331_0020_V__x00000_y02560",
+      "source_id": "DJI_20260826093331_0020_V",
+      "x0": 0,
+      "y0": 2560,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826093331_0020_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826093331_0020_V__x00000_y02560.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826093331_0020_V__x00000_y02560.png",
+      "original_sha256": "8fdc4c4cae36843ccfcd8ff3fd8dec199fcf79ca962755547078572bd29c0c1f",
+      "overlay_sha256": "fb0c821c9aad342ae439211a080a4b7ded0d4667749fa94500cb0e474e6297ae"
+    },
+    {
+      "tile_id": "DJI_20260826093331_0020_V__x02560_y02048",
+      "source_id": "DJI_20260826093331_0020_V",
+      "x0": 2560,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826093331_0020_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826093331_0020_V__x02560_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826093331_0020_V__x02560_y02048.png",
+      "original_sha256": "aabd9fcdae2f9180f985a027102f54af91af607b62888a3701c63c044838c250",
+      "overlay_sha256": "f0895285373370ddf78a9ee4e2ef9d382744043ac902df56a7815fac01d047da"
+    },
+    {
+      "tile_id": "DJI_20260826093331_0020_V__x03072_y02048",
+      "source_id": "DJI_20260826093331_0020_V",
+      "x0": 3072,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826093331_0020_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826093331_0020_V__x03072_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826093331_0020_V__x03072_y02048.png",
+      "original_sha256": "2cdecf63ec6e81b065bb694c91ca4ddb0754a9102ada58be9dbfba79f4e3f8ab",
+      "overlay_sha256": "70e4ad8868b501490b9c641289f0ffa0d3129005347f52d917ba85c9bcdbc022"
+    },
+    {
+      "tile_id": "DJI_20260826093331_0020_V__x03072_y02560",
+      "source_id": "DJI_20260826093331_0020_V",
+      "x0": 3072,
+      "y0": 2560,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826093331_0020_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826093331_0020_V__x03072_y02560.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826093331_0020_V__x03072_y02560.png",
+      "original_sha256": "1482a84be90a21afd2230dc1791b1a5155e31931b9401f6f839502b12c84b071",
+      "overlay_sha256": "0ed500b846c13cf21da2ee7172b7ed8e22ef482b72abb3fa7fb8b2db5901e64b"
+    },
+    {
+      "tile_id": "DJI_20260826094118_0100_V__x02560_y00000",
+      "source_id": "DJI_20260826094118_0100_V",
+      "x0": 2560,
+      "y0": 0,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094118_0100_V__DLM_0001",
+        "DJI_20260826094118_0100_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826094118_0100_V__x02560_y00000.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094118_0100_V__x02560_y00000.png",
+      "original_sha256": "73a29454c2cc45653635cf7da76ccdd69aca6fbac6ed1f0ee2b49826e7cd02cd",
+      "overlay_sha256": "69e2e0f4f79ab81a5e04913d52376fbc3e02b675a0fd3a1ab826a543c6b74127"
+    },
+    {
+      "tile_id": "DJI_20260826094118_0100_V__x02560_y03072",
+      "source_id": "DJI_20260826094118_0100_V",
+      "x0": 2560,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094118_0100_V__DLM_0003",
+        "DJI_20260826094118_0100_V__DLM_0006",
+        "DJI_20260826094118_0100_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20260826094118_0100_V__x02560_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094118_0100_V__x02560_y03072.png",
+      "original_sha256": "6d237c435ed026f7472b2c02ae39270b671ec5225182282919e88e11a15e1d5d",
+      "overlay_sha256": "69f5a76f4aa756c413b46bace0d186985aaefd6f9b1e1635edb9c9767fd19aea"
+    },
+    {
+      "tile_id": "DJI_20260826094118_0100_V__x03072_y00000",
+      "source_id": "DJI_20260826094118_0100_V",
+      "x0": 3072,
+      "y0": 0,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094118_0100_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094118_0100_V__x03072_y00000.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094118_0100_V__x03072_y00000.png",
+      "original_sha256": "957ef05b2ca330667fd0272007dbeaacefecb29195ff2280e7c166f8d0cbf561",
+      "overlay_sha256": "38689e9b0872cf3c65671d84ca1cde960b35a0a30237776851f56a4d6e11f6e5"
+    },
+    {
+      "tile_id": "DJI_20260826094118_0100_V__x03072_y03072",
+      "source_id": "DJI_20260826094118_0100_V",
+      "x0": 3072,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094118_0100_V__DLM_0003",
+        "DJI_20260826094118_0100_V__DLM_0004",
+        "DJI_20260826094118_0100_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20260826094118_0100_V__x03072_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094118_0100_V__x03072_y03072.png",
+      "original_sha256": "395dc9673094f9c2868b2ecfdc01cc9ce8131cdc9b7b6e60d7ced7c804cc25b1",
+      "overlay_sha256": "6a50e49d71c2f18f662bb9c129e519d60aca6cb099eaf4d899406a41f48f16d4"
+    },
+    {
+      "tile_id": "DJI_20260826094118_0100_V__x04096_y03072",
+      "source_id": "DJI_20260826094118_0100_V",
+      "x0": 4096,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094118_0100_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094118_0100_V__x04096_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094118_0100_V__x04096_y03072.png",
+      "original_sha256": "16557bac1eb6534a6d8fe6bea9dd8463705ba085afca032f3576e6231ec390e0",
+      "overlay_sha256": "6f5cf0243d192f4c31b00fcb8df127675b2509923553b1c53a4da52f1e9dd7e9"
+    },
+    {
+      "tile_id": "DJI_20260826094549_0300_V__x02048_y00512",
+      "source_id": "DJI_20260826094549_0300_V",
+      "x0": 2048,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094549_0300_V__DLM_0001",
+        "DJI_20260826094549_0300_V__DLM_0002",
+        "DJI_20260826094549_0300_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826094549_0300_V__x02048_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094549_0300_V__x02048_y00512.png",
+      "original_sha256": "c9345c5779837711a8a779e60487a6818eb14873ef2cc2ac350950d517472340",
+      "overlay_sha256": "7ac5a9abfc2458b1335a7715d9adb495adeb0f714a2b14cd41b0efdaeb190592"
+    },
+    {
+      "tile_id": "DJI_20260826094549_0300_V__x03584_y00512",
+      "source_id": "DJI_20260826094549_0300_V",
+      "x0": 3584,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094549_0300_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094549_0300_V__x03584_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094549_0300_V__x03584_y00512.png",
+      "original_sha256": "312e1b6553eb3bd6d7db0ff4f182f49f6312e11cdd21357c41d6ec55a4253d9d",
+      "overlay_sha256": "c95dc4c3a9585e79d9a44ef654b4fec608b46d916b68889228569985043afc34"
+    },
+    {
+      "tile_id": "DJI_20260826094549_0300_V__x03584_y01024",
+      "source_id": "DJI_20260826094549_0300_V",
+      "x0": 3584,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094549_0300_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094549_0300_V__x03584_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094549_0300_V__x03584_y01024.png",
+      "original_sha256": "7289c52f832fceadbc6a82a9a9e2716bfa7db7caf55301036bdf75d8aacb0172",
+      "overlay_sha256": "29cb5bd971670d114f17b364931db87926db6a268b5144cbbc490138752475ba"
+    },
+    {
+      "tile_id": "DJI_20260826094549_0300_V__x04096_y00512",
+      "source_id": "DJI_20260826094549_0300_V",
+      "x0": 4096,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094549_0300_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094549_0300_V__x04096_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094549_0300_V__x04096_y00512.png",
+      "original_sha256": "0b434673af00d57a242a888c5f588ec77fd1454f858872fd83844d844439fa78",
+      "overlay_sha256": "502fa990864efe2c26c6db28d336318ced19174970a07c45e89a177b296d25ad"
+    },
+    {
+      "tile_id": "DJI_20260826094549_0300_V__x04096_y01024",
+      "source_id": "DJI_20260826094549_0300_V",
+      "x0": 4096,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094549_0300_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094549_0300_V__x04096_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094549_0300_V__x04096_y01024.png",
+      "original_sha256": "eda71d977272b39dd5584a97c3b578c7aea2bdb34d590f4e0da8ccd6c6458f61",
+      "overlay_sha256": "c599277dfac681cd9095038d5e86f4a70bd980d18e0403c670a0d78da936cc47"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x00512_y00512",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 512,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x00512_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x00512_y00512.png",
+      "original_sha256": "6550db83c94921f6c9b8572175a7579d140ffca1e4053fbf4da2df1eba19520a",
+      "overlay_sha256": "8e27acc3c615521811d605a98c375d0cd907af64b170fd132c2c7d95ad9ee95c"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x00512_y01024",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 512,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x00512_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x00512_y01024.png",
+      "original_sha256": "07faf448743d3a600ee6fb877f67f8628366db11e9f28b83db5702f37a8f96e1",
+      "overlay_sha256": "193809830f02c73e37d0b269daa8f298ec8b4772f58ab5decc894e2e3745eca2"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x00512_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 512,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0011",
+        "DJI_20260826094700_0360_V__DLM_0013"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x00512_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x00512_y03072.png",
+      "original_sha256": "b201fce2fadd519f51a00afb92315a91213d3c864d97ee9dcd21bdb279a4fe72",
+      "overlay_sha256": "4255d1770647b065ac47b12e078eeefa1521a0e20bdfda0db0b95d74c35c85b5"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01024_y00512",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1024,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01024_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01024_y00512.png",
+      "original_sha256": "21e43547f492a971945240db22bd23c78a803c017899d5e9170b0e5bfb6ac664",
+      "overlay_sha256": "2574806d89d508fb19898cb9660017cc134d4d974cef69e949f9fc6396c065cb"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01024_y01024",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1024,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01024_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01024_y01024.png",
+      "original_sha256": "e32ec63e1f0ec43679a469a6cef4b9abbd9683a8a5ea553f77701ea629f5f3e3",
+      "overlay_sha256": "4d340dd5d204cba386bae29caf485e74c287a8dbd50ca97bf38d58965acfdf54"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01024_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1024,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0011"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01024_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01024_y03072.png",
+      "original_sha256": "22e59fc8763e4285b703ea782f1082a25822aad393015c0a677e5f37c827424f",
+      "overlay_sha256": "f44344161b3976baaef4731076d9cb2344c67093bd7b7075875cfbed8385d714"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y00512",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y00512.png",
+      "original_sha256": "3c0c681774329cbece02c78d12ba6767a16cf2b847ed91ddab4e99a06e0e794e",
+      "overlay_sha256": "1b06519a92e4d054392fa83c72ebc37361b3c537b299b9dae1d7de2be2ba5759"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y01024",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y01024.png",
+      "original_sha256": "113dccf0ae9fa5fa84c4aa9694d04b4ce3d52e4e2902050f6d609f8688f63983",
+      "overlay_sha256": "b5ba7cd401317123e744e16e7ce6f888766d52af35862ae1b293244664677831"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y01536",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0003",
+        "DJI_20260826094700_0360_V__DLM_0004",
+        "DJI_20260826094700_0360_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y01536.png",
+      "original_sha256": "04ea9f75245df0fa3f363f394ae94ae104ad5c8a851a30d02d22908404ffc032",
+      "overlay_sha256": "de2b166b4b0a83450eb0ea90d712d26344c8feca981b79966207504e391f3b74"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y02048",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0005",
+        "DJI_20260826094700_0360_V__DLM_0006",
+        "DJI_20260826094700_0360_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y02048.png",
+      "original_sha256": "e327c7d7f0c76d5b192bb367c1f7bdaa2535a2b01e55be69257a338683fa46b3",
+      "overlay_sha256": "1a4229b38aeb036cdd45198c4c4aee88edca317ebd44938b07e17cf064e12656"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y02560",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 2560,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0008",
+        "DJI_20260826094700_0360_V__DLM_0009"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y02560.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y02560.png",
+      "original_sha256": "414dccf04d1151a01ff9927eb59e3346b6fdf476f27df565fb3527e66b9f37c9",
+      "overlay_sha256": "80da01f75cee88b1721f4d9bd49dc3e2394710a16be6e2bf2f5acecc3438a942"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0008",
+        "DJI_20260826094700_0360_V__DLM_0011",
+        "DJI_20260826094700_0360_V__DLM_0014",
+        "DJI_20260826094700_0360_V__DLM_0015"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y03072.png",
+      "original_sha256": "4e49ace7f4204853b7252e0fa5711055fba917783071e97d25e0748caeef2c70",
+      "overlay_sha256": "2465d693340b7368eb52d2d91c2808712628715f4fffe9fbdf748cb81ea6e667"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x01536_y03584",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 1536,
+      "y0": 3584,
+      "valid_width": 512,
+      "valid_height": 372,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0015"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x01536_y03584.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x01536_y03584.png",
+      "original_sha256": "0c2df9637a6366afaa42797a3bdb740c1dcfe9b71e9a8f68f0ea755ff1289be1",
+      "overlay_sha256": "fec19c180cb78a20d7c04e6567c1876adf8c0bbe0f44c8ea4b92f9058b5edb7c"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x02048_y02048",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 2048,
+      "y0": 2048,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x02048_y02048.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x02048_y02048.png",
+      "original_sha256": "459e53a21d7aff3f7d8de5212b32aac68e7b800588251ca995b0f327d8bd5b3b",
+      "overlay_sha256": "7548e43c033a2289bb066e0f71a51d402f8baf8e1c950ee6a857309e2b97be2a"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x02048_y02560",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 2048,
+      "y0": 2560,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0009",
+        "DJI_20260826094700_0360_V__DLM_0010"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x02048_y02560.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x02048_y02560.png",
+      "original_sha256": "f2b4cbb14a0902b354e3d735aa7ace89f13678d16000fda2fcb9f56f7c36cfe9",
+      "overlay_sha256": "b673f3696080c73a3f591c77f5aed756d91d5f09d9884882eb8f09a96e12c3b2"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x02560_y01024",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 2560,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x02560_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x02560_y01024.png",
+      "original_sha256": "1b1b0079d8c94a15958bef9f67637569be26e58fee0561ff30c473122077643d",
+      "overlay_sha256": "edf62693ade554b33935c8098515ccbe1ced5cda174bc3f8b169951004a9ce79"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x02560_y01536",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 2560,
+      "y0": 1536,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0002"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x02560_y01536.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x02560_y01536.png",
+      "original_sha256": "cb64649c57586c6d44a630cb3426c36fb9120573d97fc9a844022339f7392e89",
+      "overlay_sha256": "da0dfcbd70cbe3dcb78f8a145606b31847d30b7006fada36059e95cb3e084a02"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x02560_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 2560,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0012"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x02560_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x02560_y03072.png",
+      "original_sha256": "b9121df6feb67c0e9704474542ba720f606217c84af9afd38bb7733dcf0d4483",
+      "overlay_sha256": "622a677aab1bdb7841494a995a531a01286c77f4d3ea95bc21ecc333921536dc"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x03072_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 3072,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0012"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x03072_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x03072_y03072.png",
+      "original_sha256": "edbaf1fcec2986ce54d95244a6d6ab901e5f7762dab974130bcaabe2796159d9",
+      "overlay_sha256": "48ef98b7497620d922b97d37cd3f696189f524f8cb61e7b01aaed059bdbb9eab"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x03072_y03584",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 3072,
+      "y0": 3584,
+      "valid_width": 512,
+      "valid_height": 372,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0012"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x03072_y03584.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x03072_y03584.png",
+      "original_sha256": "6c85eeabc1a5782c407cbe098a56715076a90dfb8572224136cf6a7443934dbb",
+      "overlay_sha256": "ba1e2b44b08dbe053ba4b22280fdbfd860b8d31931712022057d5b0ca7ba83b7"
+    },
+    {
+      "tile_id": "DJI_20260826094700_0360_V__x03584_y03072",
+      "source_id": "DJI_20260826094700_0360_V",
+      "x0": 3584,
+      "y0": 3072,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826094700_0360_V__DLM_0012"
+      ],
+      "image_path": "512원본타일/DJI_20260826094700_0360_V__x03584_y03072.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826094700_0360_V__x03584_y03072.png",
+      "original_sha256": "0de508854bc3abdfd44819d5335bbcbe633e73ba052307842c9436597f6cba15",
+      "overlay_sha256": "b495ded3ad873ae2e38c05c338201089d295ee45b4d781433798e7275bce2aa4"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x00000_y00512",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 0,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0002",
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x00000_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x00000_y00512.png",
+      "original_sha256": "2103308cfd9c0b682ddc2c30867b07f90a2c5a98871e6c15ed287e6661e67d7d",
+      "overlay_sha256": "18cbf91ba2e863127d4c47821d245665f7d4809baa769ea84316a4fe158e9aab"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x00000_y01024",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 0,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x00000_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x00000_y01024.png",
+      "original_sha256": "359f5b4d6fa455b4674d4294cf80ccbac272b74819d5cc648f0bc5b8ed9a39dc",
+      "overlay_sha256": "eb940edff54e5515f6d32937ce96980d63677bb7d7808f28a13b877e141057a9"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x00512_y00512",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 512,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x00512_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x00512_y00512.png",
+      "original_sha256": "8cdce956349e0a15816f9da01252c906a94b392f0975bb905ba5f153140c62b2",
+      "overlay_sha256": "0e47486f484d4aeb977ef5795e53f4623e42a42838670e4883e2a655c5302157"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x00512_y01024",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 512,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x00512_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x00512_y01024.png",
+      "original_sha256": "81f214ecd47c75423a67a7baaeea7b80673a241d41a56fbbf18f858735e2c649",
+      "overlay_sha256": "7625ab5fadb0d68232e53fff025e72c10de507368b04166ad826673a9207f7fb"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x01024_y00512",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 1024,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x01024_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x01024_y00512.png",
+      "original_sha256": "0677f32e3cd13aea0fe42b78218f5fb527e9264ddc16b4ad4e3f2f6c13371bf7",
+      "overlay_sha256": "3103f4d01ed08bfc02dd800b4866218b6d89007c112f530daee7ac7d1318841a"
+    },
+    {
+      "tile_id": "DJI_20260826124557_0200_V__x01024_y01024",
+      "source_id": "DJI_20260826124557_0200_V",
+      "x0": 1024,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826124557_0200_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826124557_0200_V__x01024_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826124557_0200_V__x01024_y01024.png",
+      "original_sha256": "80ac19203351483ec7e515aa1d7a4791b3a7d2294490032a69e724db411b1e62",
+      "overlay_sha256": "d874594bbc7fd8027b65fff0e6ea001c0cd297b11a0a73d85df649e2b42f9b79"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x00000_y00512",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 0,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x00000_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x00000_y00512.png",
+      "original_sha256": "56a8c76ebc0b67c993cb357a121fd931c366861e28984b083277e59a3dee3005",
+      "overlay_sha256": "b92de9cf4f42b068ff846c5b9c93008d8f7e3ddc4c06dd47cf6b3911f5b14117"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x00000_y01024",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 0,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0006"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x00000_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x00000_y01024.png",
+      "original_sha256": "8e0c1f1a8202b1f18f8cfc56ff6994683144ebf9ef28dc74375c0d347bbf2905",
+      "overlay_sha256": "0af6d645e1d105ea6882ccfbd718bad8bff4ce972ce30332a8391fdbb5fba8ee"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x01024_y00512",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 1024,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0002",
+        "DJI_20260826125854_0900_V__DLM_0004"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x01024_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x01024_y00512.png",
+      "original_sha256": "91c4ab3a4a3bb2cdc9391cf4ef2c2fa5d2e2ac0314ab104a45b5cac7e96621e2",
+      "overlay_sha256": "f4154c7c5c3a3f38d25cd4941a5b67c87fcd39798439d48f2ff93d663bf1a85c"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x01536_y00000",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 1536,
+      "y0": 0,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0001"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x01536_y00000.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x01536_y00000.png",
+      "original_sha256": "0c06980f38617872dcf7d5ef565a4908c742cf8acf3557c0e285a47cf291510d",
+      "overlay_sha256": "a1f46902a5d82f64f2bc4a647a328800063db4d6a70a1d63510cbb597f170337"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x01536_y00512",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 1536,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0001",
+        "DJI_20260826125854_0900_V__DLM_0003"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x01536_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x01536_y00512.png",
+      "original_sha256": "a639cf96f63c141d7dd479e241e1498c21631209a7c7ee80148346752e3ce9ad",
+      "overlay_sha256": "adca985fd6190e31c2ed57169d67ec448b7ffb5b6aba43c304a9f23022c6df7f"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x01536_y01024",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 1536,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0007"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x01536_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x01536_y01024.png",
+      "original_sha256": "3d579e955cad8739d2d4a1d9b1f43bc1965db2b3ba1e3eb1203f99189905a216",
+      "overlay_sha256": "ee048e1ab82b77a62058e58acfd62714bc5bdf6a3cedbe06e8635cffa414ba77"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x02048_y00512",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 2048,
+      "y0": 512,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x02048_y00512.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x02048_y00512.png",
+      "original_sha256": "83606070baef99033aeb77a48894c67d8ad3d01e032d2e547cfa020410b21528",
+      "overlay_sha256": "f8ba458808a0bf29ccddd3154abf5ee3bd796745936f5789ad9b325a602e9d60"
+    },
+    {
+      "tile_id": "DJI_20260826125854_0900_V__x02048_y01024",
+      "source_id": "DJI_20260826125854_0900_V",
+      "x0": 2048,
+      "y0": 1024,
+      "valid_width": 512,
+      "valid_height": 512,
+      "source_annotation_ids": [
+        "DJI_20260826125854_0900_V__DLM_0005"
+      ],
+      "image_path": "512원본타일/DJI_20260826125854_0900_V__x02048_y01024.png",
+      "overlay_path": "512라벨오버레이/DJI_20260826125854_0900_V__x02048_y01024.png",
+      "original_sha256": "51d9a8d1743830420a0d6f4bcb2ae3c47e110d73e08db8c59fb90b6d3ba33e73",
+      "overlay_sha256": "a20c209de5ce55264ebbc08800653c66c7cbdfdec36526326a62656d2c12e9eb"
+    }
+  ],
+  "damages": [
+    {
+      "damage_id": "D000057",
+      "source_annotation_id": "DJI_20250702150745_0300_V__DLM_0001",
+      "image": "DJI_20250702150745_0300_V.JPG",
+      "shape_index": 56,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2530.0,
+        836.0
+      ],
+      "tile_ids": [
+        "DJI_20250702150745_0300_V__x02048_y00512"
+      ],
+      "label_area_px": 1369
+    },
+    {
+      "damage_id": "D000058",
+      "source_annotation_id": "DJI_20250702150745_0300_V__DLM_0002",
+      "image": "DJI_20250702150745_0300_V.JPG",
+      "shape_index": 57,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1790.0,
+        860.0
+      ],
+      "tile_ids": [
+        "DJI_20250702150745_0300_V__x01536_y00512"
+      ],
+      "label_area_px": 1933
+    },
+    {
+      "damage_id": "D000059",
+      "source_annotation_id": "DJI_20250702150745_0300_V__DLM_0003",
+      "image": "DJI_20250702150745_0300_V.JPG",
+      "shape_index": 58,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1144.0,
+        1350.0
+      ],
+      "tile_ids": [
+        "DJI_20250702150745_0300_V__x01024_y01024"
+      ],
+      "label_area_px": 8132
+    },
+    {
+      "damage_id": "D000062",
+      "source_annotation_id": "DJI_20250702150745_0300_V__DLM_0006",
+      "image": "DJI_20250702150745_0300_V.JPG",
+      "shape_index": 61,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4568.0,
+        1586.0
+      ],
+      "tile_ids": [
+        "DJI_20250702150745_0300_V__x04096_y01536"
+      ],
+      "label_area_px": 3660
+    },
+    {
+      "damage_id": "D000063",
+      "source_annotation_id": "DJI_20250702150745_0300_V__DLM_0007",
+      "image": "DJI_20250702150745_0300_V.JPG",
+      "shape_index": 62,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2254.0,
+        1879.0
+      ],
+      "tile_ids": [
+        "DJI_20250702150745_0300_V__x02048_y01536"
+      ],
+      "label_area_px": 21810
+    },
+    {
+      "damage_id": "D000118",
+      "source_annotation_id": "DJI_20250702151015_0500_V__DLM_0002",
+      "image": "DJI_20250702151015_0500_V.JPG",
+      "shape_index": 30,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2216.0,
+        91.0
+      ],
+      "tile_ids": [
+        "DJI_20250702151015_0500_V__x02048_y00000"
+      ],
+      "label_area_px": 23455
+    },
+    {
+      "damage_id": "D000120",
+      "source_annotation_id": "DJI_20250702151015_0500_V__DLM_0004",
+      "image": "DJI_20250702151015_0500_V.JPG",
+      "shape_index": 32,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        539.0,
+        322.0
+      ],
+      "tile_ids": [
+        "DJI_20250702151015_0500_V__x00512_y00000"
+      ],
+      "label_area_px": 6050
+    },
+    {
+      "damage_id": "D000121",
+      "source_annotation_id": "DJI_20250702151015_0500_V__DLM_0005",
+      "image": "DJI_20250702151015_0500_V.JPG",
+      "shape_index": 33,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1350.0,
+        2531.0
+      ],
+      "tile_ids": [
+        "DJI_20250702151015_0500_V__x01024_y02048",
+        "DJI_20250702151015_0500_V__x01024_y02560"
+      ],
+      "label_area_px": 7997
+    },
+    {
+      "damage_id": "D000122",
+      "source_annotation_id": "DJI_20250702151015_0500_V__DLM_0006",
+      "image": "DJI_20250702151015_0500_V.JPG",
+      "shape_index": 34,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1073.0,
+        2533.0
+      ],
+      "tile_ids": [
+        "DJI_20250702151015_0500_V__x01024_y02048",
+        "DJI_20250702151015_0500_V__x01024_y02560"
+      ],
+      "label_area_px": 5302
+    },
+    {
+      "damage_id": "D000195",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0001",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 31,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4089.0,
+        1168.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x03584_y01024",
+        "DJI_20250702160538_0800_V__x03584_y00512",
+        "DJI_20250702160538_0800_V__x04096_y01024"
+      ],
+      "label_area_px": 12514
+    },
+    {
+      "damage_id": "D000196",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0002",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 32,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4126.0,
+        1378.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x04096_y01024"
+      ],
+      "label_area_px": 38
+    },
+    {
+      "damage_id": "D000197",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0003",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 33,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1452.0,
+        1740.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x01024_y01536",
+        "DJI_20250702160538_0800_V__x01536_y01536"
+      ],
+      "label_area_px": 48009
+    },
+    {
+      "damage_id": "D000198",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0004",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 34,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1784.0,
+        1762.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x01536_y01536"
+      ],
+      "label_area_px": 27994
+    },
+    {
+      "damage_id": "D000199",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0005",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 35,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4076.0,
+        2391.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x03584_y02048",
+        "DJI_20250702160538_0800_V__x04096_y02048"
+      ],
+      "label_area_px": 1888
+    },
+    {
+      "damage_id": "D000200",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0006",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 36,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2138.0,
+        2465.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x02048_y02048"
+      ],
+      "label_area_px": 3818
+    },
+    {
+      "damage_id": "D000201",
+      "source_annotation_id": "DJI_20250702160538_0800_V__DLM_0007",
+      "image": "DJI_20250702160538_0800_V.JPG",
+      "shape_index": 37,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3330.0,
+        3520.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160538_0800_V__x03072_y03072"
+      ],
+      "label_area_px": 12817
+    },
+    {
+      "damage_id": "D000228",
+      "source_annotation_id": "DJI_20250702160658_0900_V__DLM_0001",
+      "image": "DJI_20250702160658_0900_V.JPG",
+      "shape_index": 13,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1503.0,
+        641.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160658_0900_V__x01024_y00512"
+      ],
+      "label_area_px": 5
+    },
+    {
+      "damage_id": "D000229",
+      "source_annotation_id": "DJI_20250702160658_0900_V__DLM_0002",
+      "image": "DJI_20250702160658_0900_V.JPG",
+      "shape_index": 14,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1706.0,
+        940.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160658_0900_V__x01536_y00512",
+        "DJI_20250702160658_0900_V__x01024_y00512",
+        "DJI_20250702160658_0900_V__x02048_y00512",
+        "DJI_20250702160658_0900_V__x01024_y01024",
+        "DJI_20250702160658_0900_V__x01536_y01024",
+        "DJI_20250702160658_0900_V__x02048_y01024"
+      ],
+      "label_area_px": 241707
+    },
+    {
+      "damage_id": "D000234",
+      "source_annotation_id": "DJI_20250702160658_0900_V__DLM_0007",
+      "image": "DJI_20250702160658_0900_V.JPG",
+      "shape_index": 19,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1098.0,
+        1472.0
+      ],
+      "tile_ids": [
+        "DJI_20250702160658_0900_V__x01024_y01024",
+        "DJI_20250702160658_0900_V__x00512_y01024",
+        "DJI_20250702160658_0900_V__x00512_y01536",
+        "DJI_20250702160658_0900_V__x01024_y01536"
+      ],
+      "label_area_px": 55221
+    },
+    {
+      "damage_id": "D000284",
+      "source_annotation_id": "DJI_20250702165251_0480_V__DLM_0001",
+      "image": "DJI_20250702165251_0480_V.JPG",
+      "shape_index": 16,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3207.0,
+        1629.0
+      ],
+      "tile_ids": [
+        "DJI_20250702165251_0480_V__x03072_y01536"
+      ],
+      "label_area_px": 1826
+    },
+    {
+      "damage_id": "D000302",
+      "source_annotation_id": "DJI_20260826093331_0020_V__DLM_0002",
+      "image": "DJI_20260826093331_0020_V.JPG",
+      "shape_index": 17,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3089.0,
+        2511.0
+      ],
+      "tile_ids": [
+        "DJI_20260826093331_0020_V__x03072_y02048",
+        "DJI_20260826093331_0020_V__x02560_y02048",
+        "DJI_20260826093331_0020_V__x03072_y02560"
+      ],
+      "label_area_px": 12296
+    },
+    {
+      "damage_id": "D000303",
+      "source_annotation_id": "DJI_20260826093331_0020_V__DLM_0003",
+      "image": "DJI_20260826093331_0020_V.JPG",
+      "shape_index": 18,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        75.0,
+        2571.0
+      ],
+      "tile_ids": [
+        "DJI_20260826093331_0020_V__x00000_y02560"
+      ],
+      "label_area_px": 2753
+    },
+    {
+      "damage_id": "D000317",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0001",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 6,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3042.0,
+        366.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x02560_y00000",
+        "DJI_20260826094118_0100_V__x03072_y00000"
+      ],
+      "label_area_px": 4575
+    },
+    {
+      "damage_id": "D000318",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0002",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 7,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2879.0,
+        356.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x02560_y00000"
+      ],
+      "label_area_px": 3039
+    },
+    {
+      "damage_id": "D000319",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0003",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 8,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3091.0,
+        3184.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x03072_y03072",
+        "DJI_20260826094118_0100_V__x02560_y03072"
+      ],
+      "label_area_px": 40260
+    },
+    {
+      "damage_id": "D000320",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0004",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 9,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3448.0,
+        3173.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x03072_y03072"
+      ],
+      "label_area_px": 8783
+    },
+    {
+      "damage_id": "D000321",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0005",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 10,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4127.0,
+        3299.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x04096_y03072"
+      ],
+      "label_area_px": 7806
+    },
+    {
+      "damage_id": "D000322",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0006",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 11,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2917.0,
+        3316.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x02560_y03072"
+      ],
+      "label_area_px": 6258
+    },
+    {
+      "damage_id": "D000323",
+      "source_annotation_id": "DJI_20260826094118_0100_V__DLM_0007",
+      "image": "DJI_20260826094118_0100_V.JPG",
+      "shape_index": 12,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3190.0,
+        3312.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094118_0100_V__x03072_y03072",
+        "DJI_20260826094118_0100_V__x02560_y03072"
+      ],
+      "label_area_px": 7370
+    },
+    {
+      "damage_id": "D000371",
+      "source_annotation_id": "DJI_20260826094549_0300_V__DLM_0001",
+      "image": "DJI_20260826094549_0300_V.JPG",
+      "shape_index": 21,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2085.0,
+        598.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094549_0300_V__x02048_y00512"
+      ],
+      "label_area_px": 4951
+    },
+    {
+      "damage_id": "D000372",
+      "source_annotation_id": "DJI_20260826094549_0300_V__DLM_0002",
+      "image": "DJI_20260826094549_0300_V.JPG",
+      "shape_index": 22,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2145.0,
+        617.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094549_0300_V__x02048_y00512"
+      ],
+      "label_area_px": 1286
+    },
+    {
+      "damage_id": "D000373",
+      "source_annotation_id": "DJI_20260826094549_0300_V__DLM_0003",
+      "image": "DJI_20260826094549_0300_V.JPG",
+      "shape_index": 23,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2055.0,
+        681.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094549_0300_V__x02048_y00512"
+      ],
+      "label_area_px": 921
+    },
+    {
+      "damage_id": "D000375",
+      "source_annotation_id": "DJI_20260826094549_0300_V__DLM_0005",
+      "image": "DJI_20260826094549_0300_V.JPG",
+      "shape_index": 25,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        4080.0,
+        954.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094549_0300_V__x03584_y00512",
+        "DJI_20260826094549_0300_V__x04096_y00512",
+        "DJI_20260826094549_0300_V__x03584_y01024",
+        "DJI_20260826094549_0300_V__x04096_y01024"
+      ],
+      "label_area_px": 20418
+    },
+    {
+      "damage_id": "D000417",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0001",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 22,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1314.0,
+        975.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01024_y00512",
+        "DJI_20260826094700_0360_V__x00512_y00512",
+        "DJI_20260826094700_0360_V__x01536_y00512",
+        "DJI_20260826094700_0360_V__x00512_y01024",
+        "DJI_20260826094700_0360_V__x01024_y01024",
+        "DJI_20260826094700_0360_V__x01536_y01024"
+      ],
+      "label_area_px": 302618
+    },
+    {
+      "damage_id": "D000418",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0002",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 23,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2810.0,
+        1516.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x02560_y01024",
+        "DJI_20260826094700_0360_V__x02560_y01536"
+      ],
+      "label_area_px": 9085
+    },
+    {
+      "damage_id": "D000419",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0003",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 24,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1899.0,
+        1585.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y01536"
+      ],
+      "label_area_px": 6612
+    },
+    {
+      "damage_id": "D000420",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0004",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 25,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1920.0,
+        1710.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y01536"
+      ],
+      "label_area_px": 1876
+    },
+    {
+      "damage_id": "D000421",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0005",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 26,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1914.0,
+        1887.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y01536",
+        "DJI_20260826094700_0360_V__x01536_y02048"
+      ],
+      "label_area_px": 7995
+    },
+    {
+      "damage_id": "D000422",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0006",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 27,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1953.0,
+        2242.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y02048"
+      ],
+      "label_area_px": 11036
+    },
+    {
+      "damage_id": "D000423",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0007",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 28,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1988.0,
+        2410.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y02048",
+        "DJI_20260826094700_0360_V__x02048_y02048"
+      ],
+      "label_area_px": 7805
+    },
+    {
+      "damage_id": "D000424",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0008",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 29,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1809.0,
+        3070.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y02560",
+        "DJI_20260826094700_0360_V__x01536_y03072"
+      ],
+      "label_area_px": 109458
+    },
+    {
+      "damage_id": "D000425",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0009",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 30,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2073.0,
+        2813.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x02048_y02560",
+        "DJI_20260826094700_0360_V__x01536_y02560"
+      ],
+      "label_area_px": 8343
+    },
+    {
+      "damage_id": "D000426",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0010",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 31,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2239.0,
+        2843.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x02048_y02560"
+      ],
+      "label_area_px": 2441
+    },
+    {
+      "damage_id": "D000427",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0011",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 32,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1359.0,
+        3449.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01024_y03072",
+        "DJI_20260826094700_0360_V__x00512_y03072",
+        "DJI_20260826094700_0360_V__x01536_y03072"
+      ],
+      "label_area_px": 79082
+    },
+    {
+      "damage_id": "D000428",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0012",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 33,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        3269.0,
+        3501.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x03072_y03072",
+        "DJI_20260826094700_0360_V__x02560_y03072",
+        "DJI_20260826094700_0360_V__x03584_y03072",
+        "DJI_20260826094700_0360_V__x03072_y03584"
+      ],
+      "label_area_px": 70052
+    },
+    {
+      "damage_id": "D000429",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0013",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 34,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        836.0,
+        3453.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x00512_y03072"
+      ],
+      "label_area_px": 10229
+    },
+    {
+      "damage_id": "D000430",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0014",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 35,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1541.0,
+        3493.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y03072"
+      ],
+      "label_area_px": 3
+    },
+    {
+      "damage_id": "D000431",
+      "source_annotation_id": "DJI_20260826094700_0360_V__DLM_0015",
+      "image": "DJI_20260826094700_0360_V.JPG",
+      "shape_index": 36,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1933.0,
+        3546.0
+      ],
+      "tile_ids": [
+        "DJI_20260826094700_0360_V__x01536_y03072",
+        "DJI_20260826094700_0360_V__x01536_y03584"
+      ],
+      "label_area_px": 2632
+    },
+    {
+      "damage_id": "D000592",
+      "source_annotation_id": "DJI_20260826124557_0200_V__DLM_0002",
+      "image": "DJI_20260826124557_0200_V.JPG",
+      "shape_index": 9,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        24.0,
+        872.0
+      ],
+      "tile_ids": [
+        "DJI_20260826124557_0200_V__x00000_y00512"
+      ],
+      "label_area_px": 6652
+    },
+    {
+      "damage_id": "D000593",
+      "source_annotation_id": "DJI_20260826124557_0200_V__DLM_0003",
+      "image": "DJI_20260826124557_0200_V.JPG",
+      "shape_index": 10,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        781.0,
+        1016.0
+      ],
+      "tile_ids": [
+        "DJI_20260826124557_0200_V__x00512_y00512",
+        "DJI_20260826124557_0200_V__x00000_y00512",
+        "DJI_20260826124557_0200_V__x01024_y00512",
+        "DJI_20260826124557_0200_V__x00000_y01024",
+        "DJI_20260826124557_0200_V__x00512_y01024",
+        "DJI_20260826124557_0200_V__x01024_y01024"
+      ],
+      "label_area_px": 116708
+    },
+    {
+      "damage_id": "D000605",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0001",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 4,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1758.0,
+        525.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x01536_y00512",
+        "DJI_20260826125854_0900_V__x01536_y00000"
+      ],
+      "label_area_px": 10260
+    },
+    {
+      "damage_id": "D000606",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0002",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 5,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1396.0,
+        722.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x01024_y00512"
+      ],
+      "label_area_px": 7396
+    },
+    {
+      "damage_id": "D000607",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0003",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 6,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1694.0,
+        706.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x01536_y00512"
+      ],
+      "label_area_px": 2459
+    },
+    {
+      "damage_id": "D000608",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0004",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 7,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1110.0,
+        758.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x01024_y00512"
+      ],
+      "label_area_px": 5100
+    },
+    {
+      "damage_id": "D000609",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0005",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 8,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        2161.0,
+        928.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x02048_y00512",
+        "DJI_20260826125854_0900_V__x02048_y01024"
+      ],
+      "label_area_px": 41258
+    },
+    {
+      "damage_id": "D000610",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0006",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 9,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        290.0,
+        987.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x00000_y00512",
+        "DJI_20260826125854_0900_V__x00000_y01024"
+      ],
+      "label_area_px": 30460
+    },
+    {
+      "damage_id": "D000611",
+      "source_annotation_id": "DJI_20260826125854_0900_V__DLM_0007",
+      "image": "DJI_20260826125854_0900_V.JPG",
+      "shape_index": 10,
+      "label": "DLM",
+      "representative_source_pixel_xy": [
+        1907.0,
+        1050.0
+      ],
+      "tile_ids": [
+        "DJI_20260826125854_0900_V__x01536_y01024"
+      ],
+      "label_area_px": 1626
+    }
+  ]
+}
