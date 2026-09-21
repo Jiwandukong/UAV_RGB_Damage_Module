@@ -18,6 +18,13 @@
 
 라벨 기준 결과는 비교·표출 선택을 위해 보존한 별도 자료이며, **모델 추론의 입력으로 사용하지 않습니다.**
 
+손상별 시연 결과는 다음 두 경로에서 확인합니다.
+
+- [모델 추론 전체 CRC / DLM / SPL 결과](04.시연산출물/모델추론결과/damage_type별%20결과/): 원래 inference 21,453건 전체와 class별 positive-only 타일.
+- [사람 검수 후 KEEP된 CRC / DLM / SPL 라벨링 결과](04.시연산출물/라벨참고결과/damage_type별%20결과/): spatial valid 588건 검수 후 KEEP된 231건(CRC 78 / DLM 57 / SPL 96)과 KEEP-only 오버레이.
+
+기존 mixed 모델·라벨 결과는 그대로 유지합니다. MODEL review/bulk EXCLUDE는 모델 게시본에 적용하지 않았으며, LABEL EXCLUDE는 원본 GT 삭제를 의미하지 않습니다.
+
 ## 모델 실행
 
 ### 1. 설치 — 처음 한 번
